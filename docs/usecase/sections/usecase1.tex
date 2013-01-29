@@ -3,37 +3,87 @@ The following section describes potential use cases for the Hotel Management Sys
 
 \setlength{\parskip}{10pt plus 1pt minus 1pt}
 A user is able to:
-\begin{itemize} 
+\begin{enumerate}
 	\item Log in, and log out from the system.
 	\item Register to the system.
 	\item See and update his or her profile information.
 	\item View rooms' information.
 	\item Search rooms by room price, room type, room amenities, room capacity and room availability.
-\end{itemize}
+	\item Issue trouble tickets
+\end{enumerate}
 
 
 A customer who is also a user is able to:
-\begin{itemize}
+\begin{enumerate}
 	\item Book a reservation by selecting check-in/check-out dates, room type, number of adults/children, room amenities and comments.
 	\item Edit, and cancel his or her reservations.
-\end{itemize}
+\end{enumerate}
 
 
 A sales representative who is also a user is able to:
-\begin{itemize}
+\begin{enumerate}
 	\item Edit and cancel customers' reservations.
+		\label{editCustomers}
 	\item Book room(s) for customers.
+		\label{bookRooms}
 	\item Add, edit and delete rooms.
+		\label{manageRooms}
 	\item Add, edit and delete customers.
+		\label{manageCustomers}
 	\item View room bookings.
+		\label{viewRooms}
+	\item View customers.
+		\label{viewCustomers}
 	\item Search customers by name, phone number, email, number of bookings, and customer-since date.
+		\label{searchCustomers}
 	\item Search bookings by check-in/check-out dates, room type and room number.
-\end{itemize}
+		\label{searchRooms}
+	\item Issue trouble tickets for customer
+		\label{issueTickets}
+	\item Should be able to receive trouble tickets
+		\label{receiveTickets}
+	\item Check payment status
+		\label{paymentStatus}
+	\item Record payment
+		\label{recordPayment}
+\end{enumerate}
 
 An administrator who is a user/sales-representative is able to:
-\begin{itemize}
-        \item Add, edit, and delete users.
-\end{itemize}
+\begin{enumerate}
+	\item Add, edit, and delete users.
+	\item View reports
+\end{enumerate}
 
-
-
+\begin{table}[h]
+	\begin{tabular}{| p{4cm} | p{4cm} | p{4cm} |}
+		\hline
+			\textbf{Story Card Number} & \textbf{Priority} & \textbf{Difficulty} \\
+		\hline
+			Rails Setup & Highest & Hard \\
+		\hline
+			Sales: 4 & High & Easy \\
+		\hline
+			Sales: 3 & High & Medium \\
+		\hline
+			Sales: 5 & High & Medium \\
+		\hline
+			Sales: 2 & High & Hard \\
+		\hline
+			Sales: \ref{editCustomers} & High & Medium \\
+		\hline
+			Sales: \ref{issueTickets} & Low & Medium \\
+		\hline
+			Sales: \ref{receiveTickets} & Low & Medium \\
+		\hline
+			Sales: \ref{paymentStatus} & Medium & Medium \\
+		\hline
+			Sales: \ref{recordPayment} & Medium & Easy \\
+		\hline
+			Sales: \ref{searchCustomers} & Low & Medium \\
+		\hline
+			Sales: \ref{searchBookings} & Low & Medium \\
+		\hline
+			
+		\hline
+	\end{tabular}
+\end{table}
