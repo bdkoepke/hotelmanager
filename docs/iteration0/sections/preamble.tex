@@ -1,0 +1,37 @@
+% fancy code formatting
+\usepackage{listings}
+
+% necessary for \url and \href
+\usepackage{hyperref}
+
+% change the default ugly hyperref url's
+% (by default links are surrounded by green
+% borders, which is pretty ugly...)
+\usepackage{xcolor}
+\definecolor{dark-red}{rgb}{0.4,0.15,0.15}
+\definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
+\definecolor{medium-blue}{rgb}{0,0,0.5}
+\hypersetup{
+	colorlinks, linkcolor={dark-red},
+	citecolor={dark-blue}, urlcolor={medium-blue}
+}
+
+% tex's margins tend to be too large
+\usepackage[left=1.25in,right=1.25in,bottom=1.25in,top=1.25in]{geometry}
+
+% course is seng 403
+\journal{SENG 403, Winter 2013}
+
+% define an input style for bash scripts
+\lstdefinestyle{BashInputStyle}{
+	language=bash,
+	basicstyle=\small\sffamily,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=3pt,
+	frame=tb,
+	columns=fullflexible,
+	backgroundcolor=\color{yellow!20},
+	linewidth=0.9\linewidth,
+	xleftmargin=0.1\linewidth
+}

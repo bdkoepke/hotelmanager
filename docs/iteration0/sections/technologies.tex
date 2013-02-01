@@ -1,0 +1,14 @@
+\section{Key Development Technologies}
+
+The key development technologies include the integrated development environment, the continuous integration server, the testing framework, and the version control system. Eclipse was chosen as the IDE due to the fact that it is both open source and cross-platform. Eclipse has also been promoted in previous courses, so the majority of the group is already familiar with it. Unfortunately Eclipse does not have out of the box support for Ruby, so the Ruby plugin Aptana is being used for Ruby support.
+
+Jenkins is being used as the CI server, and is being hosted at \href{http://seng403.ssh22.net/jenkins}{http://seng403.ssh22.net/jenkins}.
+
+Ruby already has a built-in testing framework Unit::Test, so this unit testing framework will be used.
+
+Git is being used as the version control system, and Trac is being used as the web interface to git. The git repository can be checked out using:
+
+\lstset{language=bash}
+\begin{lstlisting}
+git clone <username>@seng403.ssh22.net:/var/cache/git/hotelmanager
+\end{lstlisting}
