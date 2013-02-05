@@ -7,7 +7,9 @@ iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/base/article.cls)
+iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/base/ifthen.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/elsarticle/elsarticle.cls)
+iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/geometry/geometry.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/graphics/graphics.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty)
@@ -23,7 +25,9 @@ iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty)
+iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/pdfpages/pdfpages.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/psnfss/pifont.sty)
+iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/tools/calc.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/url/url.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-site/tex/latex/xcolor/xcolor.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,iteration0.tex)
@@ -31,10 +35,24 @@ iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/critique.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/header.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/preamble.tex)
-iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/releaseplan.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/requirements.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/successfactors.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/technologies.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/visionstatement.tex)
 .SECONDEXPANSION:
+-include include/releaseplan.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/releaseplan.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/releaseplan.pdf)
+-include include/releaseplan.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/releaseplan.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/releaseplan.pdf)
+-include include/releaseplan.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/releaseplan.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/releaseplan.pdf)
+-include include/releaseplan.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/releaseplan.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/releaseplan.pdf)
+-include include/releaseplan.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/releaseplan.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/releaseplan.pdf)
 iteration0.bbl iteration0.aux iteration0.aux.make: $(call path-norm,./iteration0.bib)
