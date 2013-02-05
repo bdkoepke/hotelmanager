@@ -31,10 +31,11 @@ iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-dist/tex/latex/url/url.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,/usr/share/texmf-site/tex/latex/xcolor/xcolor.sty)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,iteration0.tex)
+iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/appendix.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/conclusion.tex)
-iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/critique.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/header.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/preamble.tex)
+iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/releaseplan.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/requirements.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/successfactors.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/technologies.tex)
@@ -55,4 +56,19 @@ iteration0.pdf iteration0._graphics: $$(call graphics-target,include/releaseplan
 -include include/releaseplan.pdf.gpi.d
 iteration0.d: $$(call graphics-source,include/releaseplan.pdf)
 iteration0.pdf iteration0._graphics: $$(call graphics-target,include/releaseplan.pdf)
+-include include/erdiagram.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/erdiagram.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/erdiagram.pdf)
+-include include/erdiagram.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/erdiagram.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/erdiagram.pdf)
+-include include/erdiagram.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/erdiagram.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/erdiagram.pdf)
+-include include/erdiagram.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/erdiagram.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/erdiagram.pdf)
+-include include/erdiagram.pdf.gpi.d
+iteration0.d: $$(call graphics-source,include/erdiagram.pdf)
+iteration0.pdf iteration0._graphics: $$(call graphics-target,include/erdiagram.pdf)
 iteration0.bbl iteration0.aux iteration0.aux.make: $(call path-norm,./iteration0.bib)
