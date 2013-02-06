@@ -1,13 +1,21 @@
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Supported Browsers}}{3}{table.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Required Software}}{4}{table.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Vision Statement}{2}{section.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Release Plan}{2}{section.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Requirements}{3}{section.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Critical Success Factors}{3}{section.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Key Development Technologies}{4}{section.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Appendix}{5}{section.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Critical Success Factors}{4}{section.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Key Development Technologies}{5}{section.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Critique}{6}{section.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Appendix}{6}{section.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}References}{9}{section.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Client Requirements}{3}{subsection.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Server Requirements}{3}{subsection.3.2}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
 \bibdata{iteration0}
 \bibstyle{abbrv}
+\citation{fedoraMysql}
+\citation{usageShare}
 \fi}
 \fi}
 \gdef\HyperFirstAtBeginDocument#1{#1}
@@ -19,5 +27,8 @@
 \global\let\oldnewlabel\newlabel
 \let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
+\newlabel{serverRequirements}
+\newlabel{supportedBrowsers}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
