@@ -4,16 +4,12 @@
 % necessary for \url and \href
 \usepackage{hyperref}
 
-\usepackage{breakurl}
-
-% necessary for multirow tables
-%\usepackage{multirow}
-
-% necessary for advanced table formatting
-%\usepackage{booktabs}
-
 % pdf import
 \usepackage{pdfpages}
+
+% booktabs for nice tables
+\usepackage{booktabs}
+\usepackage{multirow}
 
 % change the default ugly hyperref url's
 % (by default links are surrounded by green
@@ -32,17 +28,3 @@
 
 % course is seng 403
 \journal{SENG 403, Winter 2013}
-
-% define an input style for bash scripts
-\lstdefinestyle{BashInputStyle}{
-	language=bash,
-	basicstyle=\small\sffamily,
-	numbers=left,
-	numberstyle=\tiny,
-	numbersep=3pt,
-	frame=tb,
-	columns=fullflexible,
-	backgroundcolor=\color{yellow!20},
-	linewidth=0.9\linewidth,
-	xleftmargin=0.1\linewidth
-}
