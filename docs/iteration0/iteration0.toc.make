@@ -5,6 +5,6 @@
 \contentsline {subsection}{\numberline {3.2}Server Requirements}{3}{subsection.3.2}
 \contentsline {section}{\numberline {4}Critical Success Factors}{4}{section.4}
 \contentsline {section}{\numberline {5}Key Development Technologies}{5}{section.5}
-\contentsline {section}{\numberline {6}Critique}{6}{section.6}
+\contentsline {section}{\numberline {6}Contributions}{6}{section.6}
 \contentsline {section}{\numberline {7}Appendix}{6}{section.7}
 \contentsline {section}{\numberline {8}References}{9}{section.8}

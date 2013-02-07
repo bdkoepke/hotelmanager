@@ -35,8 +35,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/upsy.fd
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/upsy.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
-INPUT iteration0.spl
-INPUT iteration0.spl
 INPUT /usr/share/texmf-dist/tex/latex/natbib/natbib.sty
 INPUT /usr/share/texmf-dist/tex/latex/natbib/natbib.sty
 OUTPUT iteration0.spl
@@ -90,8 +88,6 @@ INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
-INPUT iteration0.aux
-INPUT iteration0.aux
 OUTPUT iteration0.aux
 INPUT /usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 INPUT /usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -105,14 +101,8 @@ INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 INPUT /usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-INPUT iteration0.out
-INPUT iteration0.out
-INPUT iteration0.out
-INPUT iteration0.out
-OUTPUT iteration0.pdf
-INPUT ./iteration0.out
-INPUT ./iteration0.out
 OUTPUT iteration0.out
+OUTPUT iteration0.pdf
 INPUT sections/header.tex
 INPUT sections/header.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
@@ -126,8 +116,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT iteration0.toc
-INPUT iteration0.toc
 OUTPUT iteration0.toc
 INPUT //var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT sections/visionstatement.tex
@@ -149,8 +137,8 @@ INPUT /usr/share/texmf-dist/tex/latex/base/omlcmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/omlcmr.fd
 INPUT sections/conclusion.tex
 INPUT sections/conclusion.tex
-INPUT sections/critique.tex
-INPUT sections/critique.tex
+INPUT sections/contributions.tex
+INPUT sections/contributions.tex
 INPUT sections/appendix.tex
 INPUT sections/appendix.tex
 INPUT include/releaseplan.pdf
@@ -181,8 +169,6 @@ INPUT include/erdiagram.pdf
 INPUT ./include/erdiagram.pdf
 INPUT include/erdiagram.pdf
 INPUT ./include/erdiagram.pdf
-INPUT iteration0.bbl
-INPUT iteration0.bbl
 INPUT iteration0.aux
 INPUT ./iteration0.out
 INPUT ./iteration0.out

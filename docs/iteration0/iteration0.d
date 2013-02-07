@@ -35,7 +35,7 @@ iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,iteration0.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/appendix.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/conclusion.tex)
-iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/critique.tex)
+iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/contributions.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/header.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/preamble.tex)
 iteration0.aux iteration0.aux.make iteration0.d iteration0.pdf: $(call path-norm,sections/releaseplan.tex)

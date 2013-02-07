@@ -5,7 +5,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3}Requirements}{3}{section.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Critical Success Factors}{4}{section.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Key Development Technologies}{5}{section.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Critique}{6}{section.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Contributions}{6}{section.6}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}Appendix}{6}{section.7}}
 \@writefile{toc}{\contentsline {section}{\numberline {8}References}{9}{section.8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Client Requirements}{3}{subsection.3.1}}
@@ -29,4 +29,3 @@
 \let\newlabel\oldnewlabel
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
-\providecommand\NAT@force@numbers{}\NAT@force@numbers
