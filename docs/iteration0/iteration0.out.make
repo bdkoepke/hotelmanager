@@ -6,5 +6,4 @@
 \BOOKMARK [1][-]{section.4}{Critical Success Factors}{}% 6
 \BOOKMARK [1][-]{section.5}{Key Development Technologies}{}% 7
 \BOOKMARK [1][-]{section.6}{Contributions}{}% 8
-\BOOKMARK [1][-]{section.7}{Appendix}{}% 9
-\BOOKMARK [1][-]{section.8}{References}{}% 10
+\BOOKMARK [1][-]{section.7}{References}{}% 9
