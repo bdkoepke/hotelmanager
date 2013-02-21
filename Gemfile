@@ -25,6 +25,7 @@ gem 'jquery-rails'
 # framework for creating administration style interfaces
 gem 'activeadmin'
 gem "meta_search", '>= 1.1.0.pre'
+gem 'cancan'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
