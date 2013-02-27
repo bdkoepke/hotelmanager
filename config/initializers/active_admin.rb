@@ -118,6 +118,11 @@ ActiveAdmin.setup do |config|
   config.batch_actions = true
 
 
+config.clear_stylesheets!
+config.register_stylesheet 'admin/active_admin.css'
+
+config.clear_javascripts!
+config.register_javascript 'admin/active_admin.js'
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your
