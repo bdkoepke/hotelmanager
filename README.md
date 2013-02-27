@@ -12,7 +12,7 @@ git clone git@github.com:bdkoepke/hotelmanager.git
 
 cd hotelmanagement
 
-bundle:install
+bundle install
 
 rake db:create
 
