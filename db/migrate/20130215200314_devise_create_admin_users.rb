@@ -2,7 +2,11 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
   def migrate(direction)
     super
     # Create a default user
+<<<<<<< HEAD
     AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password', :role => 'admin') if direction == :up
+=======
+    AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password') if direction == :up
+>>>>>>> 0456d704fc81140d9e461b4d934b862b91815b5e
   end
 
   def change
@@ -10,6 +14,10 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
+<<<<<<< HEAD
+=======
+      t.string :role
+>>>>>>> 0456d704fc81140d9e461b4d934b862b91815b5e
 
       ## Recoverable
       t.string   :reset_password_token
@@ -24,7 +32,10 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
+<<<<<<< HEAD
 			t.string   :role
+=======
+>>>>>>> 0456d704fc81140d9e461b4d934b862b91815b5e
 
       ## Confirmable
       # t.string   :confirmation_token
