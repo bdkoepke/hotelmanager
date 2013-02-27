@@ -150,8 +150,6 @@ ActiveAdmin.setup do |config|
   # Set the CSV builder options (default is {})
   # config.csv_options = {}
 end
-<<<<<<< HEAD
-=======
 
 # Below the ActiveAdmin.setup block, I've opened up the ActiveAdmin::ResourceController
 # and modified the current_ability method to use a special AdminAbility class.
@@ -165,4 +163,3 @@ ActiveAdmin::ResourceController.class_eval do
     @current_ability ||= AdminAbility.new(current_admin_user)
   end
 end
->>>>>>> 0456d704fc81140d9e461b4d934b862b91815b5e

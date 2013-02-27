@@ -1,8 +1,5 @@
 ActiveAdmin.register Customer do
-<<<<<<< HEAD
-=======
 	controller.authorize_resource
->>>>>>> 0456d704fc81140d9e461b4d934b862b91815b5e
 	index do
 		column :id do |customer|
 			link_to customer.id, [:admin, customer]
