@@ -1,0 +1,45 @@
+\section{Requirements}
+
+\subsection{Client Requirements}
+Any operating system capable of running a browser from figure \ref{supportedBrowsers} will be supported. This includes Windows Vista and later, Mac OS X 10.5 and later and most Linux variants.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Browser} & \textbf{Minimum Version} & \textbf{Layout Engine} \\
+		\hline
+		Firefox & 18 & Gecko \\
+		\hline
+		Google Chrome & 24 & WebKit \\
+		\hline
+		Safari & 5 & Webkit \\
+		\hline
+		Internet Explorer & 9 & Trident \\
+		\hline
+	\end{tabular}
+	\caption{Supported Browsers}
+	\label{supportedBrowsers}
+\end{table}
+
+These web browsers were chosen because it enables us to support 93.34\% of non-mobile web browsers as of October 2012 \cite{usageShare}. 
+
+\subsection{Server Requirements}
+
+The server is officially supported on Heroku. The system can be installed on other Linux and UNIX systems, but the installation will not be officially supported. Table \ref{serverRequirements} lists the necessary packages and their versions.
+\begin{table}[!h]
+	\begin{tabular}{|p{2cm}|p{2cm}|p{3cm}|p{6cm}|}
+		\hline
+		\textbf{Package} & \textbf{Minimum Version} & \textbf{Description} & \textbf{Rationale} \\
+		\hline
+		Ruby & 1.9.3 & Programming Language & Ruby is a dependency of the Ruby on Rails framework. \\
+		\hline
+		RubyGems & 1.8.24 & Ruby Package Manager & RubyGems eases the installation of third-party ruby libraries. Using ruby gems, you can install the latest version of a library without having to use the system package manager. \\
+		\hline
+		Ruby on Rails & 3.2 & Full-Stack Web Application Framework & Most of the group is writing their paper assignment on Ruby on Rails and we currently only have one group member that has previous experience with Ruby on Rails. In order to write a well-reasoned paper, the group decided that Ruby on Rails should also be used for the supplier assignment in order to gain experience with the framework. Ruby on Rails also favours convention over configuration which makes the creation of simple create, read, update, and delete (CRUD) apps easy. \\
+		\hline
+		Postgresql & 8.4.13 & Object-Relational SQL Database & Postgresql is the default database supported by Heroku. Many modern Linux distributions are also leaving MySql as their default database due to the recent Oracle acquisition of Sun (who previously owned MySql) \cite{fedoraMysql}. \\
+		\hline
+	\end{tabular}
+	\caption{Required Software}
+	\label{serverRequirements}
+\end{table}

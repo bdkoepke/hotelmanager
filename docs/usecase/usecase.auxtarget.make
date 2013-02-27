@@ -1,0 +1,12 @@
+\newlabel{bookRooms}
+\newlabel{editCustomers}
+\newlabel{issueTickets}
+\newlabel{manageCustomers}
+\newlabel{manageRooms}
+\newlabel{paymentStatus}
+\newlabel{receiveTickets}
+\newlabel{recordPayment}
+\newlabel{searchCustomers}
+\newlabel{searchRooms}
+\newlabel{viewCustomers}
+\newlabel{viewRooms}

@@ -1,0 +1,16 @@
+\section{Key Development Technologies}
+
+We have decided to implement the webpage using Ruby on Rails framework. Ruby on rails is an open source web application framework for Ruby. We have chosen to use this framework because it allows developers to code features fast. Moreover, some members of our group decided to work on the topic of Ruby of Rails development for their paper assignment, so that we all decided that using this framework for this other project would be beneficial to them.
+
+For deployment we have decided to use Heroku, which is a cloud platform as a service. We have decided to use Heroku because it integrates well with Ruby on Rails, and it is easy to deploy projects with just a git command. Furthermore, this is recommended by most people in the rails community. Heroku also offers a Postgres free data plan to start, so we are going to use Postgres to store our data.
+
+Other key development technologies include the integrated development environment, the continuous integration server, the testing framework, and the version control system. Eclipse was chosen as the IDE due to the fact that it is both open source and cross-platform. Eclipse has also been promoted in previous courses, so the majority of the group is already familiar with it. Unfortunately Eclipse does not have out of the box support for Ruby, so the plugin Aptana is being used for Ruby support.
+
+Jenkins is being used as the CI server, and is being hosted \href{http://seng403.ssh22.net/jenkins}{here}. Jenkins was chosen because it has an extremely large number of plugins and it is easy to extend. It also has support for many of the common version control systems including git. We also looked at CruiseControl.rb, but chose not to use it because it does not have a graphical reporting system. Git is being used as the version control system, and Trac is being used as the web interface to git. The git repository can be checked out using:
+\lstset{language=bash}
+\begin{lstlisting}
+git clone <username>@seng403.ssh22.net:/var/cache/git/hotelmanager
+\end{lstlisting}
+The trac repository can be accessed \href{http://seng403.ssh22.net/trac}{here}. We also tried the Gitlab web interface, but it was missing timeline and roadmap functionality and its bug reporting functionality was poor.
+
+Shoulda will be used as the unit testing framework. This is because it is an extension of the built in Ruby unit testing framework Test::Unit. Unlike RSpec which encourages Behaviour Driven Development, Shoulda uses Test Driven Development which the group is more familiar with.

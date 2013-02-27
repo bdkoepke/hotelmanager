@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+valid-mike:
+  first_name: Mike
+  last_name: Tyson
+  address: 333 Chevron Road SW Calgary Canada T5B 5X6
+  phone: (404)-234-2345
+  email: mike.tyson@yahoo.com
+
