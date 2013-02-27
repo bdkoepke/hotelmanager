@@ -15,11 +15,13 @@ rake db:create
 
 rake db:migrate
 
+rake db:seed
+
 rails server
 
 go to localhost:3000/admin/
 
-Username: admin@example.com
+Username: admin@admin.com
 
 Password: password
 
