@@ -1,3 +1,4 @@
+#comment.. test
 class Customer < ActiveRecord::Base
   attr_accessible :address, :comment, :email, :first_name, :last_name, :phone
   validates :first_name, :last_name, :email,  :presence => {:message => 'field can\'t be blank'}
