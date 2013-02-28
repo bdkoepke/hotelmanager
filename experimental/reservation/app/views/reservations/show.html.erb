@@ -1,0 +1,48 @@
+<% title "Reservation" %>
+
+<p>
+  <strong>Room No:</strong>
+  <%= @reservation.room_no %>
+</p>
+<p>
+  <strong>First Name:</strong>
+  <%= @reservation.first_name %>
+</p>
+<p>
+  <strong>Last Name:</strong>
+  <%= @reservation.last_name %>
+</p>
+<p>
+  <strong>Date In:</strong>
+  <%= @reservation.date_in %>
+</p>
+<p>
+  <strong>Date Out:</strong>
+  <%= @reservation.date_out %>
+</p>
+<p>
+  <strong>Rate Daily:</strong>
+  <%= @reservation.rate_daily %>
+</p>
+<p>
+  <strong>Rate Additional:</strong>
+  <%= @reservation.rate_additional %>
+</p>
+<p>
+  <strong>No Adults:</strong>
+  <%= @reservation.no_adults %>
+</p>
+<p>
+  <strong>No Children:</strong>
+  <%= @reservation.no_children %>
+</p>
+<p>
+  <strong>Comment:</strong>
+  <%= @reservation.comment %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_reservation_path(@reservation) %> |
+  <%= link_to "Destroy", @reservation, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", reservations_path %>
+</p>

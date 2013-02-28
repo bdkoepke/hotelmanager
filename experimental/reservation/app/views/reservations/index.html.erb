@@ -1,0 +1,35 @@
+<% title "Reservations" %>
+
+<table>
+  <tr>
+    <th>Room #</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Check In</th>
+    <th>Check Out</th>
+    <th>Daily Rate</th>
+    <th>Additional Rate</th>
+    <th># Adults</th>
+    <th># Children</th>
+    <th>Comments</th>
+  </tr>
+  <% for reservation in @reservations %>
+    <tr>
+      <td><%= reservation.room_no %></td>
+      <td><%= reservation.first_name %></td>
+      <td><%= reservation.last_name %></td>
+      <td><%= reservation.date_in %></td>
+      <td><%= reservation.date_out %></td>
+      <td><%= reservation.rate_daily %></td>
+      <td><%= reservation.rate_additional %></td>
+      <td><%= reservation.no_adults %></td>
+      <td><%= reservation.no_children %></td>
+      <td><%= reservation.comment %></td>
+      <td><%= link_to "Show", reservation %></td>
+      <td><%= link_to "Edit", edit_reservation_path(reservation) %></td>
+      <td><%= link_to "Destroy", reservation, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Reservation", new_reservation_path %></p>
