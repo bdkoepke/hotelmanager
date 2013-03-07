@@ -1,0 +1,26 @@
+\section{Work Progress}
+
+In our initial plan we decided to focus on implementing the most important stories that   involved the administrator and the sales representative. These tasks involved implementing the access control for both of these users as well as allowing them to perform basic operations on customers such as search, create, edit, view and delete.
+
+In order to implement these tasks we searched and analysed some of the existing gems that the ruby on rails community provides. We decided to implement the Hotel Manager website using ActiveAdmin, and CanCan. ActiveAdmin is a Ruby on Rails plugin that allows developers to quickly create an admin interface and CanCan is a gem that handles authorization.  ActiveAdmin allows developers to quickly create models, and it provides a clean and intuitive interface to allow administrators to manage those models.
+
+We decided to use ActiveAdmin after weighing the pros and cons of using this gem:
+
+\textbf{Pros:}
+\begin{itemize}
+	\item Easy to create models (e.g., rooms, room types, etc..). This will be useful in next iterations.
+	\item Handles authorization through the Devise gem.
+	\item It is possible to restrict resources adding \href{https://github.com/ryanb/cancan}{CanCan} support.
+	\item Supports pagination, search/filter-by functionality, scopes, sorts out of the box.
+	\item Can expand controllers' functionality, and add custom views with partial forms. 
+\end{itemize}
+\textbf{Cons:}
+\begin{itemize}
+	\item Uses \href{https://github.com/justinfrench/formtastic}{Formtastic} DSL to create views (forms, sidebars, tables, etc). Steep learning-curve.
+	\item Uses \href{http://sass-lang.com}{SASS} to create the css stylesheets. Steep learning curve.
+\end{itemize}
+As one can see, the main concern with this gem was that the learning curve was going to be steeper since we had to learn how to use other gems in order to change the style of the website, and create new forms for our models. However, we concluded that the use of this gem was going to make us more efficient in future iterations because most of the future stories involve creating models and performing basic CRUD operations on these models.
+
+It is worth mentioning that the current work was migrated to \href{https://github.com/bdkoepke/hotelmanager}{GitHub}.
+
+The production version can be found at: \url{http://brandonkoepke.dyndns.org:3000/admin/login}. We also have an experimental reservation system which has not yet been integrated at: \url{http://brandonkoepke.dyndns.org:3001/reservations}.

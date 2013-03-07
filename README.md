@@ -27,5 +27,3 @@ go to localhost:3000/admin/
 Username: admin@admin.com
 
 Password: password
-
-
