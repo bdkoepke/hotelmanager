@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130221012824) do
+ActiveRecord::Schema.define(:version => 20130309215348) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -60,6 +59,34 @@ ActiveRecord::Schema.define(:version => 20130221012824) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "hotels", :force => true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "province"
+    t.string   "countryname"
+    t.string   "postalcode"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "reservations", :force => true do |t|
+    t.integer  "room_no"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "date_in"
+    t.date     "date_out"
+    t.float    "rate_daily"
+    t.float    "rate_additional"
+    t.integer  "no_adults"
+    t.integer  "no_children"
+    t.text     "comment"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "roles", :force => true do |t|
