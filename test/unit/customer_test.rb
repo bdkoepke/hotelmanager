@@ -9,11 +9,14 @@ class CustomerTest < ActiveSupport::TestCase
     assert customer.errors[:last_name].any?
     assert customer.errors[:email].any?
     assert customer.errors[:phone].any?
-    assert customer.errors[:address].any?
+    assert Hotel.errors[:address1].any?
+    assert Hotel.errors[:countryname].any?
+    assert Hotel.errors[:province].any?
+
   end
 
   test "customer's email is invalid" do	
-	customer = Customer.new(:first_name=>"mike", :last_name=>"tyson" , :email=> "asd", :phone=>"(234)-234-3344" )  
+	customer = Customer.new(:first_name=>"mike", :last_name=>"tyson" , :email=> "asd", :phone=>"234-234-3344" )  
     assert !customer.save
   end
 
