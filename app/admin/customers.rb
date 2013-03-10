@@ -15,11 +15,11 @@ ActiveAdmin.register Customer do
 	
 	form do |f|
 		f.inputs "" do
-		f.input :first_name , :label => "First name:"
-		f.input :last_name , :label => "Last name:"
-		f.input :email, :label => "Email"
-		f.input :phone, :label => "Phone Number:"
-		f.input :address, :label => "Address:"
+			f.input :first_name , :label => "First name:"
+			f.input :last_name , :label => "Last name:"
+			f.input :email, :label => "Email:"
+			f.input :phone, :label => "Phone Number:"
+			f.input :address, :label => "Address:"
 		f.buttons
 		end
 	end

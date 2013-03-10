@@ -14,11 +14,11 @@ class CustomerTest < ActiveSupport::TestCase
 
   test "customer's email is invalid" do	
 	customer = Customer.new(:first_name=>"mike", :last_name=>"tyson" , :email=> "asd", :phone=>"(234)-234-3344" )  
-    assert !product.save
+    assert !customer.save
   end
 
   test "customer's phone is invalid" do	
 	customer = Customer.new(:first_name=>"mike", :last_name=>"tyson" , :email=> "mike@tyson.com", :phone=>"234 234 3344" )  
-    assert !product.save
+    assert !customer.save
   end
 end
