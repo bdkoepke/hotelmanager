@@ -41,6 +41,7 @@ gem 'activeadmin'
 gem "meta_search", '>= 1.1.0.pre'
 gem 'cancan'
 gem 'ui_datepicker-rails3'
+gem 'validates_timeliness', '~> 3.0'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
