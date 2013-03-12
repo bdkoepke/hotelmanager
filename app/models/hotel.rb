@@ -1,4 +1,5 @@
 class Hotel < ActiveRecord::Base
+	has_many :rooms
   attr_accessible :address1, :address2, :countryname, :email, :name, :phone, :postalcode, :province
   validates :name, :phone, :email, :address1, :countryname, :province, :presence => true
   validates :name, :uniqueness => { :message => 'that hotel name  is aleady in our records.'}

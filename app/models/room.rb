@@ -1,3 +1,4 @@
 class Room < ActiveRecord::Base
-  attr_accessible :bed_number, :cleaned, :comment, :room_number, :room_type
+	belongs_to :hotel
+  attr_accessible :bed_number, :cleaned, :comment, :hotel_id, :room_name, :room_type, :price
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312075144) do
+ActiveRecord::Schema.define(:version => 20130312223235) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -55,11 +55,15 @@ ActiveRecord::Schema.define(:version => 20130312075144) do
   create_table "customers", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "address"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "province"
+    t.string   "countryname"
+    t.string   "postalcode"
     t.string   "phone"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "hotels", :force => true do |t|
@@ -100,13 +104,21 @@ ActiveRecord::Schema.define(:version => 20130312075144) do
   end
 
   create_table "rooms", :force => true do |t|
-    t.integer  "room_number"
+    t.integer  "hotel_id"
+    t.string   "room_name"
     t.string   "room_type"
     t.integer  "bed_number"
     t.boolean  "cleaned"
     t.string   "comment"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.float    "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.integer  "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
