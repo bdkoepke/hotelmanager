@@ -6,6 +6,7 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   config.site_title = "Hotelmanager"
+  UiDatePickerRails3.activate :active_admin
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -57,7 +58,7 @@ ActiveAdmin.setup do |config|
   # within the controller.
   config.authentication_method = :authenticate_admin_user!
 
-
+  
   # == Current User
   #
   # Active Admin will associate actions with the current
@@ -123,6 +124,7 @@ config.register_stylesheet 'admin/active_admin.css'
 
 config.clear_javascripts!
 config.register_javascript 'admin/active_admin.js'
+config.register_javascript 'admin/datepicker.js'
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your

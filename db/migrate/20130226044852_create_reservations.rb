@@ -1,6 +1,7 @@
 class CreateReservations < ActiveRecord::Migration
   def self.up
     create_table :reservations do |t|
+     
       t.integer :room_no
       t.string :first_name
       t.string :last_name
