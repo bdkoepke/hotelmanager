@@ -1,4 +1,5 @@
 ActiveAdmin.register Room do
+  controller.authorize_resource
       index do
         column :id do |room|
             link_to room.id, [:admin, room]
@@ -10,7 +11,7 @@ ActiveAdmin.register Room do
         column "Price", :price
         column "Cleaned", :cleaned
         column "Comment", :comment
-
+        default_actions
     end
 
     form do |f|
