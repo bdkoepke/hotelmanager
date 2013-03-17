@@ -80,9 +80,8 @@ ActiveRecord::Schema.define(:version => 20130312223235) do
   end
 
   create_table "reservations", :force => true do |t|
-    t.integer  "room_no"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.integer  "room_id"
+    t.integer  "customer_id"
     t.date     "date_in"
     t.date     "date_out"
     t.float    "rate_daily"
@@ -92,7 +91,6 @@ ActiveRecord::Schema.define(:version => 20130312223235) do
     t.text     "comment"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.string   "hotel_name"
   end
 
   create_table "roles", :force => true do |t|
@@ -105,18 +103,12 @@ ActiveRecord::Schema.define(:version => 20130312223235) do
 
   create_table "rooms", :force => true do |t|
     t.integer  "hotel_id"
-    t.string   "room_name"
+    t.string   "name"
     t.string   "room_type"
     t.integer  "bed_number"
     t.boolean  "cleaned"
     t.string   "comment"
     t.float    "price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "tasks", :force => true do |t|
-    t.integer  "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

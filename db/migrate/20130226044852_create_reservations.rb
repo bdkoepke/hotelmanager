@@ -1,10 +1,8 @@
 class CreateReservations < ActiveRecord::Migration
   def self.up
     create_table :reservations do |t|
-     
-      t.integer :room_no
-      t.string :first_name
-      t.string :last_name
+      t.integer :room_id
+			t.integer :customer_id
       t.date :date_in
       t.date :date_out
       t.float :rate_daily
