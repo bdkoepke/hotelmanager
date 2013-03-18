@@ -11,7 +11,7 @@ one:
   comment: MyText
 
 two:
-  room_no: 1
+  room_no: 2
   first_name: MyString
   last_name: MyString
   date_in: 2013-02-25
