@@ -19,10 +19,9 @@ class AdminAbility
       can :manage, Customer
     end
       
-  #  end
-#    can :manage, AdminUser
- #   can :read, AdminUser
 =begin
+    can :manage, AdminUser
+    can :read, AdminUser
     # A moderator can do the following:
     if user.role('moderator')
       can :manage, :all
