@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20130312223235) do
     t.text     "comment"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "hotel_name"
   end
 
   create_table "roles", :force => true do |t|

@@ -17,8 +17,8 @@ ActiveAdmin.register Reservation do
 			f.input :date_in, :as => :ui_date_picker
 			f.input :date_out , :as => :ui_date_picker, :options => { minDate: Date.today}
 			f.input :rate_additional 
-			f.input :no_adults 
-			f.input :no_children
+			f.input :no_adults , :as => :select, :collection => [0,1,2,3,4]
+			f.input :no_children, :as => :select, :collection => [0,1,2,3,4]
 			f.input :comment
 			f.buttons
 		end
