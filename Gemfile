@@ -44,8 +44,8 @@ gem 'ui_datepicker-rails3'
 gem 'validates_timeliness', '~> 3.0'
 
 # necessary for running on fedora, why?
-require 'v8'
-gem "therubyracer", :require => 'v8'
+#require 'v8'
+#gem "therubyracer", :require => 'v8'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

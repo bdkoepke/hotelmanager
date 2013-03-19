@@ -125,6 +125,7 @@ config.register_stylesheet 'admin/active_admin.css'
 config.clear_javascripts!
 config.register_javascript 'admin/active_admin.js'
 config.register_javascript 'admin/datepicker.js'
+config.register_javascript 'admin/reservations.js'
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your

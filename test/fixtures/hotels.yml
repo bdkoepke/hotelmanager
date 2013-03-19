@@ -7,7 +7,7 @@ one:
   address1: MyString
   address2: MyString
   province: MyString
-  country: MyString
+  countryname: MyString
   postalcode: MyString
 
 two:
@@ -17,5 +17,15 @@ two:
   address1: MyString
   address2: MyString
   province: MyString
-  country: MyString
+  countryname: MyString
+  postalcode: MyString
+
+hotel:
+  name: My hotel
+  phone: 999999999
+  email: validhotel@hotel.ca
+  address1: MyString
+  address2: MyString
+  province: MyString
+  countryname: MyString
   postalcode: MyString

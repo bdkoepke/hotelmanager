@@ -2,8 +2,10 @@ class Reservation < ActiveRecord::Base
   belongs_to :room
   # TODO: are there possibly multiple customers to one room?
   belongs_to :customer
+  belongs_to :hotel
 
-  attr_accessible :room_id, :customer_id, :date_in, :date_out, :rate_additional, :no_adults, :no_children, :comment
+  attr_accessible  :hotel_id , :room_id, :customer_id, :date_in, :date_out, :rate_additional, :no_adults, :no_children, :comment
+  #attr_accessible :room, :customer, :date_in, :date_out, :rate_additional, :no_adults, :no_children, :comment
 
   validates :room_id, :uniqueness => { :message => 'Room is is already in our records' }
   validates :rate_additional, :price => true

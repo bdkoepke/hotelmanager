@@ -1,7 +1,6 @@
 one:
-  room_no: 1
-  first_name: MyString
-  last_name: MyString
+  room: room1
+  customer: some person
   date_in: 2013-02-25
   date_out: 2013-02-25
   rate_daily: 1.5
@@ -11,9 +10,8 @@ one:
   comment: MyText
 
 two:
-  room_no: 2
-  first_name: MyString
-  last_name: MyString
+  room: room2
+  customer: some other person
   date_in: 2013-02-25
   date_out: 2013-02-25
   rate_daily: 1.5
