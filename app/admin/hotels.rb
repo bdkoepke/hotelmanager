@@ -1,4 +1,6 @@
 ActiveAdmin.register Hotel do
+  menu :if => proc{ current_admin_user.role == "admin" }
+  
   index do
     column :id do |hotel|
       link_to hotel.id, [:admin, hotel]

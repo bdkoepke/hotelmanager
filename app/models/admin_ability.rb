@@ -17,6 +17,8 @@ class AdminAbility
       can :manage, :all
     elsif (user.role == "sales associate")
       can :manage, Customer
+      can :manage, Room
+      can :manage, Reservation
     end
       
 =begin
