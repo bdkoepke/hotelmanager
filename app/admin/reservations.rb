@@ -49,9 +49,11 @@ ActiveAdmin.register Reservation do
   controller.authorize_resource
     index do
       column :id do |registration|
+              link_to registration.id, [:admin, registration]
     end
     column :hotel_id
     column :room_id
+    column :room_type
     column :customer
     column :date_in
     column :date_out
