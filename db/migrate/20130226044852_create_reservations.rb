@@ -10,6 +10,9 @@ class CreateReservations < ActiveRecord::Migration
       t.integer :no_adults
       t.integer :no_children
       t.text :comment
+      t.string :room_type
+      t.string :hotel_name
+      t.integer :hotel_id
       t.timestamps
     end
   end

@@ -50,8 +50,8 @@ ActiveAdmin.register Reservation do
     index do
       column :id do |registration|
     end
-    column :hotel
-    column :room
+    column :hotel_id
+    column :room_id
     column :customer
     column :date_in
     column :date_out
