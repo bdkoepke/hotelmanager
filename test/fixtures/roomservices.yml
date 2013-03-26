@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order: MyString
+  price: 1.5
+  serviced: false
+
+two:
+  order: MyString
+  price: 1.5
+  serviced: false
