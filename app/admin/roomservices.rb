@@ -1,3 +1,3 @@
-ActiveAdmin.register Roomservice do
+#ActiveAdmin.register Roomservice do
   
-end
+#end

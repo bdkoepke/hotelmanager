@@ -7,7 +7,7 @@ class Reservation < ActiveRecord::Base
   attr_accessible  :hotel_id , :room_id, :customer_id, :date_in, :date_out, :rate_additional, :no_adults, :no_children, :comment, :room_type
   #attr_accessible :room, :customer, :date_in, :date_out, :rate_additional, :no_adults, :no_children, :comment
 
-  validates :room_id, :dates_must_not_overlap =>'Room is is already in our records' 
+  #validates :room_id, :dates_must_not_overlap =>'Room is is already in our records' 
   validates :rate_additional, :price => true
   validates_date :date_in, :on_or_after => lambda { Date.current }
   validates_date :date_out, :after => lambda { :date_in }
@@ -17,7 +17,7 @@ class Reservation < ActiveRecord::Base
             :unless => Proc.new {|r| r.room.nil? }
 # validates :age_min, :numericality => {greater_than: 0, less_than_or_equal_to: :age_max}, :unless => Proc.new {|user| user.age_min.nil? || user.age_max.nil? }
 
-  validate :dates_must_not_overlap
+  #validate :dates_must_not_overlap
 
 #before_validation :add_correct_time_to_date
 
