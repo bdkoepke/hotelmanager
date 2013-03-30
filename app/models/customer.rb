@@ -1,6 +1,7 @@
 #comment.. test
 class Customer < ActiveRecord::Base
   has_many :reservations
+  belongs_to :user
   # TODO: proper validation for province, country, postal code
   attr_accessible :address1, :address2, :province, :countryname, :postalcode, :email, :first_name, :last_name, :phone
   validates :first_name, :last_name, :email, :address1, :province, :countryname, :presence => {:message => 'Field can\'t be blank'}

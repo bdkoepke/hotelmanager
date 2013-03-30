@@ -13,6 +13,7 @@ ActiveAdmin.register Customer do
     column :province
     column "Country", :countryname
     column "Postal Code", :postalcode
+	column :user
     column :created_at 
     default_actions			
   end
