@@ -2,6 +2,7 @@ class AdminUser < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role, :customer_attributes
   has_one :customer
+  has_many :reservations, :through => :customer
   accepts_nested_attributes_for :customer
 
   # Include default devise modules. Others available are:

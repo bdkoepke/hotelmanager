@@ -1,12 +1,6 @@
 ActiveAdmin.register Reservation do
   menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate"  || current_admin_user.role == "customer"}
-#  scope_to do
- #   Class.new do
-  #    def self.reservations
-   #      Reservation.where(:id => 3)
-    # end
-#    end
- # end
+  scope_to :current_admin_user
   
   collection_action :getcols, :method => :get do
       

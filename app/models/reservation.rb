@@ -1,4 +1,5 @@
 class Reservation < ActiveRecord::Base
+
   belongs_to :room
   # TODO: are there possibly multiple customers to one room?
   belongs_to :customer

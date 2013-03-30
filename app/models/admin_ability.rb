@@ -21,11 +21,10 @@ class AdminAbility
       can :manage, Reservation
 	elsif (user.role == "customer")
 	  can :create, Reservation
-	  can :update, Reservation, :customer_id => user.customer.id
-      can :read, Reservation, :customer_id => user.customer.id
-      can :destroy, Reservation, :customer_id => user.customer.id
-	  can :manage, Customer, :admin_user_id => user.id
-		
+	  can :update, Reservation
+      can :read, Reservation
+      can :destroy, Reservation
+	  can :manage, Customer		
     end
       
 =begin
