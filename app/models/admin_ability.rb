@@ -24,7 +24,9 @@ class AdminAbility
 	  can :update, Reservation
       can :read, Reservation
       can :destroy, Reservation
-	  can :manage, Customer		
+	  can :read, Customer
+      can :update, Customer
+      can :destroy, Customer
     end
       
 =begin

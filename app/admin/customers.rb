@@ -1,5 +1,5 @@
 ActiveAdmin.register Customer do
-#  scope_to :current_admin_user
+#  scope_to :current_admin_user , #:association_method => :manage_user
 
   controller.authorize_resource
   index do

@@ -1,7 +1,7 @@
 ActiveAdmin.register Reservation do
   menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate"  || current_admin_user.role == "customer"}
-  scope_to :current_admin_user
-  
+  scope_to :current_admin_user, :association_method => :manage_reservations
+
   collection_action :getcols, :method => :get do
       
       number_beds   =  Room.where(:name => params[:room_name]).pluck(:room_type)

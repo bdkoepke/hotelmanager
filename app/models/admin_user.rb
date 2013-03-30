@@ -14,4 +14,11 @@ class AdminUser < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   # attr_accessible :title, :body
 
+  def manage_reservations
+		if self.role == "admin" || self.role == "sales representative"
+			Reservation.reorder('id DESC')
+		elsif self.role == "customer"
+			reservations	
+		end
+  end
 end
