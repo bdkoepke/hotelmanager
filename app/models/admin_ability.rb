@@ -5,7 +5,7 @@ class AdminAbility
   include CanCan::Ability
  
   def initialize(user)
-    user ||= User.new
+#    user ||= User.new
  
     # We operate with three role levels:
     #  - Editor
@@ -19,8 +19,13 @@ class AdminAbility
       can :manage, Customer
       can :manage, Room
       can :manage, Reservation
-	elsif (user.role.nil?)
-	  can :manage, Reservation
+	elsif (user.role == "customer")
+	  can :create, Reservation
+	  can :update, Reservation, :customer_id => user.customer.id
+      can :read, Reservation, :customer_id => user.customer.id
+      can :destroy, Reservation, :customer_id => user.customer.id
+	  can :manage, Customer, :admin_user_id => user.id
+		
     end
       
 =begin

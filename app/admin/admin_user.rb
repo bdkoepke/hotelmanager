@@ -2,13 +2,14 @@ ActiveAdmin.register AdminUser do
   menu :if => proc{ current_admin_user.role == "admin" }
   controller.authorize_resource
   
-  rolesnames = ["admin", "sales associate"]
+  rolesnames = ["admin", "sales associate", "customer"]
   index do
     column :email
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
     column :role
+    column :customer
     default_actions
   end
 

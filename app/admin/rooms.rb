@@ -1,4 +1,6 @@
 ActiveAdmin.register Room do
+  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate" }
+
   controller.authorize_resource
   index do
     column :id do |room|

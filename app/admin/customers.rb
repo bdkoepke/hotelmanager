@@ -1,4 +1,6 @@
 ActiveAdmin.register Customer do
+#  scope_to :current_admin_user
+
   controller.authorize_resource
   index do
     column :id do |customer|
@@ -13,7 +15,7 @@ ActiveAdmin.register Customer do
     column :province
     column "Country", :countryname
     column "Postal Code", :postalcode
-	column :user
+	column :admin_user
     column :created_at 
     default_actions			
   end

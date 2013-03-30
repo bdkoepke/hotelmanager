@@ -1,4 +1,9 @@
 class AdminUser < ActiveRecord::Base
+
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role, :customer_attributes
+  has_one :customer
+  accepts_nested_attributes_for :customer
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -6,6 +11,6 @@ class AdminUser < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable, :registerable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :role
   # attr_accessible :title, :body
+
 end

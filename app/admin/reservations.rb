@@ -1,5 +1,5 @@
 ActiveAdmin.register Reservation do
-  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate"  || current_admin_user.role.nil?}
+  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate"  || current_admin_user.role == "customer"}
 #  scope_to do
  #   Class.new do
   #    def self.reservations
