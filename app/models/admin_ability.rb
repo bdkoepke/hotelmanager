@@ -19,6 +19,8 @@ class AdminAbility
       can :manage, Customer
       can :manage, Room
       can :manage, Reservation
+	elsif (user.role.nil?)
+	  can :manage, Reservation
     end
       
 =begin

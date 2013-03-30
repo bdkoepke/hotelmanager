@@ -89,11 +89,11 @@ ActiveRecord::Schema.define(:version => 20130326142406) do
     t.integer  "no_adults"
     t.integer  "no_children"
     t.text     "comment"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.string   "room_type"
     t.string   "hotel_name"
     t.integer  "hotel_id"
-    t.string   "room_type",       :limit => nil
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "roles", :force => true do |t|

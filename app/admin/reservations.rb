@@ -1,4 +1,12 @@
 ActiveAdmin.register Reservation do
+  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate"  || current_admin_user.role.nil?}
+#  scope_to do
+ #   Class.new do
+  #    def self.reservations
+   #      Reservation.where(:id => 3)
+    # end
+#    end
+ # end
   
   collection_action :getcols, :method => :get do
       
@@ -50,8 +58,10 @@ ActiveAdmin.register Reservation do
     index do
       column :id do |registration|
               link_to registration.id, [:admin, registration]
-    end
+      end
+#	  if (!current_admin_user.role.nil?)
     column :hotel_id
+#	  end
     column :room_id
     column :room_type
     column :customer

@@ -1,8 +1,9 @@
 Hotelmanager::Application.routes.draw do
   ActiveAdmin.routes(self)
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
+#  devise_for :admin_users, ActiveAdmin::Devise.config
+#  devise_for :admin_users
+	devise_for :admin_users do get '/admin_users/sign_out' => 'devise/sessions#destroy' end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -51,7 +52,7 @@ Hotelmanager::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'admin/dashboard#index'
 
   # See how all your routes lay out with "rake routes"
 
