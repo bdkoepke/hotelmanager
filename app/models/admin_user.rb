@@ -15,7 +15,7 @@ class AdminUser < ActiveRecord::Base
   # attr_accessible :title, :body
 
   def manage_reservations
-		if self.role == "admin" || self.role == "sales representative"
+		if self.role == "admin" || self.role == "sales associate"
 			Reservation.reorder('id DESC')
 		elsif self.role == "customer"
 			reservations	
