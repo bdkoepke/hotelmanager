@@ -1,8 +1,18 @@
 ActiveAdmin.register Invoice do
 actions :index, :show, :destroy
 
+index do
+    column "Customer" do |invoice|
+      invoice.reservation.customer.name
+    end
+    column :total
+    column :created_at
+    default_actions
+end
+
   show do
-    panel "Invoice" do
+	@title = "Invoice - " + invoice.reservation.customer.name
+    panel @title do
   
 attributes_table_for invoice do
         
