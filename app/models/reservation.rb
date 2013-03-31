@@ -4,6 +4,7 @@ class Reservation < ActiveRecord::Base
   belongs_to :customer
   belongs_to :hotel
  has_one :invoice
+ has_many :room_service
 after_create :build_invoice
 
 def build_invoice
