@@ -1,5 +1,5 @@
 ActiveAdmin.register Customer do
-#  scope_to :current_admin_user , #:association_method => :manage_user
+  scope_to :current_admin_user , :association_method => :manage_customer
 
   controller.authorize_resource
   index do
@@ -15,7 +15,9 @@ ActiveAdmin.register Customer do
     column :province
     column "Country", :countryname
     column "Postal Code", :postalcode
-	column :admin_user
+	if current_admin_user.role != "customer"
+		column :admin_user
+	end
     column :created_at 
     default_actions			
   end

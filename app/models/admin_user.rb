@@ -21,4 +21,12 @@ class AdminUser < ActiveRecord::Base
 			reservations	
 		end
   end
+
+  def manage_customer
+		if self.role == "admin" || self.role == "sales associate"
+			Customer.reorder('id DESC')
+		elsif self.role == "customer"
+			Customer.where(:admin_user_id => self.id).reorder('id DESC')
+		end
+  end
 end

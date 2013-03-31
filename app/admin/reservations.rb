@@ -53,9 +53,7 @@ ActiveAdmin.register Reservation do
       column :id do |registration|
               link_to registration.id, [:admin, registration]
       end
-#	  if (!current_admin_user.role.nil?)
     column :hotel_id
-#	  end
     column :room_id
     column :room_type
     column :customer
