@@ -3,7 +3,12 @@ class Reservation < ActiveRecord::Base
   # TODO: are there possibly multiple customers to one room?
   belongs_to :customer
   belongs_to :hotel
+ has_one :invoice
+after_create :build_invoice
 
+def build_invoice
+	self.invoice = Invoice.create(:total => self.room.price + self.rate_additional, :reservation_id => self.id)
+end 
   attr_accessible  :hotel_id , :room_id, :customer_id, :date_in, :date_out, :rate_additional, :no_adults, :no_children, :comment, :room_type
   #attr_accessible :room, :customer, :date_in, :date_out, :rate_additional, :no_adults, :no_children, :comment
 
