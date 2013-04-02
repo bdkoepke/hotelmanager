@@ -116,14 +116,14 @@ ActiveRecord::Schema.define(:version => 20130331052227) do
   create_table "room_services", :force => true do |t|
     t.integer  "service_id"
     t.integer  "customer_id"
-    t.integer  "reservation_number"
+    t.integer  "reservation_id"
     t.string   "hotel_id"
     t.integer  "room_id"
     t.boolean  "serviced"
     t.string   "order"
     t.float    "price"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "rooms", :force => true do |t|
