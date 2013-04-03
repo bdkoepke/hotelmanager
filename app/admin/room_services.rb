@@ -1,30 +1,30 @@
 ActiveAdmin.register RoomService do
 
-   collection_action :getRooms, :method => :get do
+#   collection_action :getRooms, :method => :get do
       # get the rooms for a particular hotel ..
-      hotel_id =  params[:hotel_id]
-      if (hotel_id != nil)
-              rooms = Room.where(:hotel_id => hotel_id).pluck(:name)
-      end
+#      hotel_id =  params[:hotel_id]
+##      if (hotel_id != nil)
+#              rooms = Room.where(:hotel_id => hotel_id).pluck(:name)
+#      end
 
 
-      respond_to do |format|
-          format.json { render :json => rooms }
-      end
-    end
+#      respond_to do |format|
+#          format.json { render :json => rooms }
+#      end
+#    end
 
 
 
   controller.authorize_resource
     index do
       column :id do |room_service|
-              link_to service.id, [:admin, room_service]
+              link_to room_service.id, [:admin, room_service]
     end
     column :hotel_id
-    column :room_name
+   column :room_id
     column :reservation_id
- #   column :customer_name
-    column :order
+  #  column :customer_name
+   column :order
     column :price
     column :serviced
     default_actions   
