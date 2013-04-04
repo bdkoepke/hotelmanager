@@ -11,6 +11,7 @@ end
 
 module Hotelmanager
   class Application < Rails::Application
+		config.force_ssl = true
     
     config.assets.precompile += %w[admin/active_admin.css admin/active_admin.js]
     config.assets.initialize_on_precompile = false

@@ -138,6 +138,17 @@ ActiveRecord::Schema.define(:version => 20130331052227) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "roomservices", :force => true do |t|
+    t.string   "order"
+    t.float    "price"
+    t.boolean  "serviced"
+    t.string   "customer_name"
+    t.string   "room_name"
+    t.string   "hotel_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
