@@ -1,5 +1,20 @@
 ActiveAdmin.register Reservation do
-  
+
+  scope :all, :default => true
+  scope :checked_in
+  scope :checked_out
+
+  #change status in index table 
+  collection_action :changeStatus, :method => :get do
+    status = params[:status] 
+    reservationID = params[:reservation_id]
+    myreservation = Reservation.find(reservationID)
+    myreservation.update_attribute(:status, status)
+     respond_to do |format|
+          format.json { render :json => 1 }
+      end
+  end
+
   collection_action :getcols, :method => :get do
       
       number_beds   =  Room.where(:name => params[:room_name]).pluck(:room_type)
@@ -15,15 +30,15 @@ ActiveAdmin.register Reservation do
    
    collection_action :getRooms, :method => :get do
       # get the rooms for a particular hotel ..
-      hotel_id =  params[:hotel_id]
-      room_type = params[:room_type]
+      hotelid =  params[:hotel_id]
+      roomtype = params[:room_type]
 
-      if(room_type == nil)
-        rooms = Room.where(:hotel_id => hotel_id).pluck(:name)
+      if(roomtype == nil)
+        rooms = Room.where(:hotel_id => hotelid).pluck(:name)
       else 
-        rooms = Room.where(:hotel_id => hotel_id, :room_type => room_type).pluck(:name)
+        rooms = Room.where(:hotel_id => hotelid, :room_type => roomtype).pluck(:name)
       end 
-
+      @available_rooms = rooms
       respond_to do |format|
           format.json { render :json => rooms }
       end
@@ -31,12 +46,12 @@ ActiveAdmin.register Reservation do
 
     collection_action :checkValidRoom, :method => :get do
       
-      room_name = params[:room_name]
-      hotel_id =  params[:hotel_id]
-      room_type = params[:room_type]
+      roomname = params[:room_name]
+      hotelid =  params[:hotel_id]
+      roomtype = params[:room_type]
       not_change = "false"
 
-      if (Room.where(:hotel_id => hotel_id, :room_type => room_type, :name => room_name).count(:name) > 0)
+      if (Room.where(:hotel_id => hotelid, :room_type => roomtype, :name => roomname).count(:name) > 0)
         not_change = "true"
       end
 
@@ -51,12 +66,16 @@ ActiveAdmin.register Reservation do
       column :id do |registration|
               link_to registration.id, [:admin, registration]
     end
-    column :hotel_id
-    column :room_id
+    column :hotel
+    column :room
     column :room_type
     column :customer
     column :date_in
     column :date_out
+    column :status
+    column "Change Status" do |r|
+      select_tag(:status, options_for_select( [['', r.id],['Checked-in', r.id] , ['Checked-out', r.id]]))     
+    end
     default_actions		
   end
 
@@ -64,11 +83,12 @@ ActiveAdmin.register Reservation do
     f.inputs "" do
       f.input :hotel
       f.input :room_type, :as => :select, :collection => ["Regular", "Suite"]
-      f.input :room, :label => "Available Rooms" # , :collection => {}
+      f.input :room, :label => "Available Rooms"# , :collection => {}
+      #f.input :room,  :label => "Available Rooms" , :collection => @available_rooms
       f.input :customer
       f.input :date_in, :as => :ui_date_picker
       f.input :date_out , :as => :ui_date_picker, :options => { minDate: Date.today}
-      f.input :rate_additional 
+      f.input :rate_additional
       f.input :no_adults , :as => :select, :collection => [1,2,3,4]
       f.input :no_children, :as => :select, :collection => [0,1,2,3]
       f.input :comment
