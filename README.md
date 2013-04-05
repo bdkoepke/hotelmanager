@@ -18,11 +18,9 @@ rake db:create
 
 rake db:migrate
 
-rake db:seed
+bundle exec ruby script/secure_rails s
 
-rails server
-
-go to localhost:3000/admin/
+go to localhost:3000/
 
 Username: admin@admin.com
 
