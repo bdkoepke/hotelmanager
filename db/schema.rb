@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130330183046) do
+ActiveRecord::Schema.define(:version => 20130405222258) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -80,6 +80,15 @@ ActiveRecord::Schema.define(:version => 20130330183046) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "invoices", :force => true do |t|
+    t.decimal  "total"
+    t.integer  "reservation_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "invoices", ["reservation_id"], :name => "index_invoices_on_reservation_id"
+
   create_table "reservations", :force => true do |t|
     t.integer  "room_id"
     t.integer  "customer_id"
@@ -95,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20130330183046) do
     t.integer  "hotel_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "status"
   end
 
   create_table "roles", :force => true do |t|
@@ -103,6 +113,19 @@ ActiveRecord::Schema.define(:version => 20130330183046) do
     t.string   "models"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "room_services", :force => true do |t|
+    t.integer  "service_id"
+    t.integer  "customer_id"
+    t.integer  "reservation_id"
+    t.string   "hotel_id"
+    t.integer  "room_id"
+    t.boolean  "serviced"
+    t.string   "order"
+    t.float    "price"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "rooms", :force => true do |t|
