@@ -28,37 +28,17 @@ end
   #validates :no_adults, :numericality => { :less_than_or_equal_to => lambda { |r| r.room.bed_number} }
   validates :no_adults, :numericality => { :less_than_or_equal_to => lambda { |r| r.room.try(:bed_number)} , :message => 'Number of people exceeds room capacity'},
             :unless => Proc.new {|r| r.room.nil? }
-# validates :age_min, :numericality => {greater_than: 0, less_than_or_equal_to: :age_max}, :unless => Proc.new {|user| user.age_min.nil? || user.age_max.nil? }
 
-  #validate :dates_must_not_overlap
+	validate :overlaps?
 
-#before_validation :add_correct_time_to_date
+	def overlaps?
+		overlap = Reservation.where('room_id == ? AND date_out > ? AND date_in < ?', room_id, date_in, date_out).count > 0
 
-#def add_correct_time_to_date
-#  self.date_start = self.date_start.beginning_of_day
-#  self.date_end = self.date_end.end_of_day
-#end
+		if overlap
+			errors.add(:date_in, 'Overlaps with another reservation')
+			errors.add(:date_out, 'Overlaps with another reservation')
+		end
 
-def validate
-  self.errors.add_to_base("Invalid date range") if self.date_in > self.date_out or self.date_out < self.date_in
-end
-
-def dates_must_not_overlap
-  # if i'm editing a record, don't include itself in the overlap check
-  if self.new_record?
-    overlapping_reservations = Reservation.find(:all, :conditions => ["(? > date_in and ? < date_out) or (? > date_in and ? < date_out)", self.date_in, self.date_in, self.date_out, self.date_out])
-  else
-    overlapping_reservations = Reservation.find(:all, :conditions => ["((? > date_in and ? < date_out) or (? > date_in and ? < date_out)) and id != ?", self.date_in, self.date_in, self.date_out, self.date_out, self.id])
-  end
- 
-  #if it found overlapping events, throw an error
-  if overlapping_reservations.size > 0
-    reservation_ids = []
-    for event in overlapping_reservations
-      reservation_ids << reservation.id
-    end
-    errors.add_to_base("Date range overlaps with these events: #{event_titles.join(', ')}")
-  end
-end
-
+		return overlap
+	end
 end
