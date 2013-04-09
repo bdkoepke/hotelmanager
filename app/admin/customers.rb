@@ -11,12 +11,8 @@ ActiveAdmin.register Customer do
     column :last_name
     column :email
     column :phone
-    column :address1
-    column :address2
-    column :province
     column "Country", :countryname
-    column "Postal Code", :postalcode
-	if current_admin_user.role != "customer"
+	if (current_admin_user.role == "admin" || current_admin_user.role == "sales associate")
 		column :admin_user
 	end
     column :created_at 
@@ -44,6 +40,9 @@ ActiveAdmin.register Customer do
       row :first_name
       row :last_name
       row :email
+	  if (current_admin_user.role == "admin" || current_admin_user.role == "sales associate")
+		row :admin_user
+	  end
       row :phone
       row :created_at
       row :address1
