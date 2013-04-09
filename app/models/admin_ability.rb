@@ -26,6 +26,8 @@ class AdminAbility
       can :destroy, Reservation
 	  can :read, Customer
       can :update, Customer
+  elsif (user.role == "room service associate")
+      can :manage, RoomService
     end
       
 =begin

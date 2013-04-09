@@ -1,4 +1,5 @@
 ActiveAdmin.register Customer do
+    menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate"  || current_admin_user.role == "customer"}
   scope_to :current_admin_user , :association_method => :manage_customer
 
   controller.authorize_resource

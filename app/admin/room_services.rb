@@ -1,5 +1,5 @@
 ActiveAdmin.register RoomService do
-  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate" }
+  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate" || current_admin_user.role == "room service associate"}
 
 
 
