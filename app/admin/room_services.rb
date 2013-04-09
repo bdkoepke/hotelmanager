@@ -1,19 +1,17 @@
 ActiveAdmin.register RoomService do
   menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate" }
 
-#   collection_action :getRooms, :method => :get do
+
+
+   collection_action :getRooms, :method => :get do
       # get the rooms for a particular hotel ..
-#      hotel_id =  params[:hotel_id]
-##      if (hotel_id != nil)
-#              rooms = Room.where(:hotel_id => hotel_id).pluck(:name)
-#      end
-
-
-#      respond_to do |format|
-#          format.json { render :json => rooms }
-#      end
-#    end
-
+      hotelid =  params[:hotel_id]
+      rooms = Room.where(:hotel_id => hotelid).pluck(:name)
+      @available_rooms = rooms
+      respond_to do |format|
+          format.json { render :json => rooms }
+      end
+    end
 
 
   controller.authorize_resource
