@@ -16,10 +16,10 @@ ActiveAdmin.register RoomService do
     collection_action :getReservation, :method => :get do
       # get the current reservation for the particular room
       roomid = params[:room_id]
-      reservation = Reservation.where(:room_id => roomid).pluck(:name)
-      @available_reservations = reservation
+      reservations = Reservation.where(:room_id => roomid).pluck(:id)
+      @available_reservations = reservations
       respond_to do |format|
-          format.json { render :json => rooms }
+          format.json { render :json => reservations }
       end
     end
 
@@ -28,9 +28,9 @@ ActiveAdmin.register RoomService do
       column :id do |room_service|
               link_to room_service.id, [:admin, room_service]
     end
-    column :hotel_id
-   column :room_id
-    column :reservation_id
+    column :hotel
+   column :room
+    column :reservation
   # column :customer_name
    column :order
     column :price
@@ -43,8 +43,6 @@ ActiveAdmin.register RoomService do
       f.input :hotel
       f.input :room
       f.input :reservation
-    #  f.input :room_name
-     # f.input :customer_name
       f.input :order
       f.input :price
       f.input :serviced 
