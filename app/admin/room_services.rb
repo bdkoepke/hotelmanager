@@ -13,6 +13,15 @@ ActiveAdmin.register RoomService do
       end
     end
 
+    collection_action :getReservation, :method => :get do
+      # get the current reservation for the particular room
+      roomid = params[:room_id]
+      reservation = Reservation.where(:room_id => roomid).pluck(:name)
+      @available_reservations = reservation
+      respond_to do |format|
+          format.json { render :json => rooms }
+      end
+    end
 
   controller.authorize_resource
     index do
