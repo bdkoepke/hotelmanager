@@ -6,7 +6,7 @@ ActiveAdmin.register RoomService do
    collection_action :getRooms, :method => :get do
       # get the rooms for a particular hotel ..
       hotelid =  params[:hotel_id]
-      reservations = Reservation.where("hotel_id == ?  GETDATE() > ? AND GETDATE() < ?", params[:hotel_id], params[:date_in], params[:date_out])
+      reservations = Reservation.where("hotel_id == ?  GETDATE() >= ? AND GETDATE() <= ?", params[:hotel_id], params[:date_in], params[:date_out])
       rooms = Room.where(:hotel_id => hotelid; :reservation_id => reservations.id).pluck(:name)
       @available_rooms = rooms
       respond_to do |format|
