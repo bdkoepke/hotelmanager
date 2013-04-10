@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class HotelTest < ActiveSupport::TestCase
+  fixtures :hotels
   test "hotel's attributes must not be empty except address2 and postalcode" do
     hotel = Hotel.new
     assert hotel.invalid?
@@ -30,6 +31,18 @@ class HotelTest < ActiveSupport::TestCase
   test "hotel's phone is valid" do
 	hotel = Hotel.new(:name=>"DAY INN", :phone=>"334 543 5454" , :email=> "asdx@asc.com", :address1=>"an address" , :countryname=>"Canada", :province=>"Alberta")    
 	assert hotel.save   
+  end
+
+  test "hotel is not valid without a unique email" do
+    invalid_hotel = Hotel.new( :name => 'Cars Hotel', :email => hotels(:hotel).email, :phone => "234 233 4344", :address1 => "an address", :countryname=>"Canada", :province=>"Alberta")
+    assert !invalid_hotel.save
+    assert_equal "Email is already in our records.", invalid_hotel.errors[:email].join('; ')
+  end
+
+ test "hotel is not valid without a unique name" do
+    invalid_hotel = Hotel.new( :name => hotels(:hotel).name, :email => "asd@adc.oms", :phone => "234 233 4344", :address1 => "an address", :countryname=>"Canada", :province=>"Alberta")
+    assert !invalid_hotel.save
+    assert_equal "Hotel name is aleady in our records.", invalid_hotel.errors[:name].join('; ')
   end
 
 

@@ -1,5 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
 one:
   name: MyString
   phone: MyString
@@ -22,10 +21,11 @@ two:
 
 hotel:
   name: My hotel
-  phone: 999999999
+  phone: 999 999 9999
   email: validhotel@hotel.ca
   address1: MyString
   address2: MyString
   province: MyString
   countryname: MyString
   postalcode: MyString
+

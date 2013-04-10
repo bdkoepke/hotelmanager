@@ -21,17 +21,25 @@ class CustomerTest < ActiveSupport::TestCase
   end
 
   test "customer's email is valid" do	
-	customer = Customer.new(:first_name=>"mike", :last_name=>"tyson" , :email=> "acustomer@admin.com", :phone=>"234 234 3344", :address1 => "an address", :countryname => "a country" , :province => "a province")  
+	customer = Customer.new( :first_name=>"mike", :last_name=>"tyson" , :email=> "acustomer@admin.com", :phone=>"234 234 3344", :address1 => "an address", :countryname => "a country" , :province => "a province")  
     assert customer.save
   end
 
   test "customer's phone is invalid" do	
-	customer = Customer.new(:first_name=>"mike", :last_name=>"tyson" , :email=> "asd", :phone=>"234233344", :address1 => "an address", :countryname => "a country" , :province => "a province")  
+	customer = Customer.new( :first_name=>"mike", :last_name=>"tyson" , :email=> "asd", :phone=>"234233344", :address1 => "an address", :countryname => "a country" , :province => "a province")  
     assert !customer.save
   end
 
   test "customer's phone is valid" do	
-	customer = Customer.new(:first_name=>"mike", :last_name=>"tyson" , :email=> "acustomer@gmail.com", :phone=>"234 233 4344", :address1 => "an address", :countryname => "a country" , :province => "a province")  
+	customer = Customer.new( :first_name=>"mike", :last_name=>"tyson" , :email=> "acustomer@gmail.com", :phone=>"234 233 4344", :address1 => "an address", :countryname => "a country" , :province => "a province")  
     assert customer.save
   end
+
+  test "customer is not valid without a unique email" do
+    customer = Customer.new( :first_name => 'Carl', :last_name => 'Sagan', :email => customers(:valid_mike).email, :phone => "234 233 4344", :address1 => "an address", :countryname => "a country" , :province => "a province")  
+    assert !customer.save
+    assert_equal "Email is already in our records.", customer.errors[:email].join('; ')
+  end
+
+
 end
