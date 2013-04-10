@@ -6,7 +6,8 @@ ActiveAdmin.register RoomService do
    collection_action :getRooms, :method => :get do
       # get the rooms for a particular hotel ..
       hotelid =  params[:hotel_id]
-      rooms = Room.where(:hotel_id => hotelid).pluck(:name)
+      reservations = Reservation.where("hotel_id == ? AND GETDATE() >= ? AND GETDATE() <= ?", params[:hotel_id], params[:date_in], params[:date_out])
+      rooms = Room.where(:hotel_id => hotelid, :reservation_id => reservations.id).pluck(:name)
       @available_rooms = rooms
       respond_to do |format|
           format.json { render :json => rooms }
@@ -31,7 +32,6 @@ ActiveAdmin.register RoomService do
     column :hotel
    column :room
     column :reservation
-  # column :customer_name
    column :order
     column :price
     column :serviced
@@ -42,7 +42,6 @@ ActiveAdmin.register RoomService do
     f.inputs "" do
       f.input :hotel
       f.input :room
-      f.input :reservation
       f.input :order
       f.input :price
       f.input :serviced 
