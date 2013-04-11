@@ -36,9 +36,9 @@ ActiveAdmin.register Reservation do
       roomtype = params[:room_type]
 
       if(roomtype == nil && hotelid != nil)
-        rooms = Room.where(:hotel_id => hotelid).pluck(:name)
+        rooms = Room.where(:hotel_id => hotelid)
       else 
-        rooms = Room.where(:hotel_id => hotelid, :room_type => roomtype).pluck(:name)
+        rooms = Room.where(:hotel_id => hotelid, :room_type => roomtype)
       end 
       @available_rooms = rooms
       respond_to do |format|
