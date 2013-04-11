@@ -25,7 +25,8 @@ class ReservationTest < ActiveSupport::TestCase
   end 
 
   test "should not allow a registration with no adults" do
-  	@invalid_reservation = Reservation.new(:no_adults => "0", :no_children => "4", :customer => :valid_mike, :room => params[:room2])
+	
+  	@invalid_reservation = Reservation.new(:no_adults => "0", :no_children => "4", :customer => :valid_mike, :room => rooms(:room2))
   	assert !@invalid_reservation.save
   	assert_not_nil @invalid_reservation.errors[:no_adults]
   end
