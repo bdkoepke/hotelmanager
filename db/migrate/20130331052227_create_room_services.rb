@@ -9,6 +9,7 @@ class CreateRoomServices < ActiveRecord::Migration
       t.boolean :serviced
       t.string :order
       t.float :price
+      t.date :service_date
       t.timestamps
     end
   end

@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(:version => 20130405222258) do
     t.boolean  "serviced"
     t.string   "order"
     t.float    "price"
+    t.date     "service_date"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
