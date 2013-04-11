@@ -6,7 +6,6 @@ ActiveAdmin.register RoomService do
    collection_action :getRooms, :method => :get do
       # get the rooms for a particular hotel ..
       hotelid =  params[:hotel_id]
-#<<<<<<< HEAD
 #      dtoday = Date.today
 #      reservations = Reservation.where(:hotel_id => hotelid)
   #    reservations = Reservation.where("hotel_id == ? AND date_in >= ? AND date_out <= ?", params[:hotel_id], dtoday, dtoday).pluck(:room_id)
@@ -27,7 +26,7 @@ ActiveAdmin.register RoomService do
  #         end
  #         if (removeRoom)
  #           rooms.delete_at(i)
- #         end
+ #        end
           
  #         i += 1   
  #       end  
@@ -35,10 +34,6 @@ ActiveAdmin.register RoomService do
  #       rooms = nil
  #     end
       
-#=======
-#      reservations = Reservation.where("hotel_id == ? AND GETDATE() >= ? AND GETDATE() <= ?", params[:hotel_id], params[:date_in], params[:date_out])
-#      rooms = Room.where(:hotel_id => hotelid, :reservation_id => reservations.id).pluck(:name)
-#>>>>>>> 0f61689c0961c0472f76df21b560d62a7a3416f2
       @available_rooms = rooms
       respond_to do |format|
           format.json { render :json => rooms }
@@ -49,7 +44,7 @@ ActiveAdmin.register RoomService do
       # get the current reservation for the particular room
       roomid = params[:room_id]
       dtoday = Date.today
-      reservations = Reservation.where("room_id == ? AND date_in <= ? AND date_out >= ?", params[:room_id], dtoday, dtoday).pluck(:room_id)
+      reservations = Reservation.where("room_id == ? AND date_in <= ? AND date_out >= ?", params[:room_id], dtoday, dtoday).pluck(:id)
       @available_reservations = reservations
       respond_to do |format|
           format.json { render :json => reservations }
@@ -63,7 +58,7 @@ ActiveAdmin.register RoomService do
     end
     column :hotel
    column :room
-    column :reservation
+    column :reservation_id
    column :order
     column :price
     column :serviced
