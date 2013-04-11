@@ -1,0 +1,81 @@
+\documentclass[12pt]{elsarticle}
+% fancy code formatting
+\usepackage{listings}
+
+% necessary for \url and \href
+\usepackage{hyperref}
+
+% pdf import
+\usepackage{pdfpages}
+
+% booktabs for nice tables
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% change the default ugly hyperref url's
+% (by default links are surrounded by green
+% borders, which is pretty ugly...)
+\usepackage{xcolor}
+\definecolor{dark-red}{rgb}{0.4,0.15,0.15}
+\definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
+\definecolor{medium-blue}{rgb}{0,0,0.5}
+\hypersetup{
+  colorlinks, linkcolor={dark-red},
+  citecolor={dark-blue}, urlcolor={medium-blue}
+}
+
+% tex's margins tend to be too large
+\usepackage[left=1.25in,right=1.25in,bottom=1.25in,top=1.25in]{geometry}
+
+% course is seng 403
+\journal{SENG 403, Winter 2013}
+
+\begin{document}
+
+\begin{frontmatter}
+  \title{Iteration 3}
+  \author{Brandon Koepke, Alberto Saavedra, Garrick Van Der Lee, Julia Paredes, Tyler Gibb, Justin Milanovic}
+	\begin{abstract}
+		The following report provides an outline of the work achieved during iteration 3, and the individual contributions of each team member.
+	\end{abstract}
+\end{frontmatter}
+\tableofcontents
+\listoffigures
+\clearpage
+
+\section{Work Progress}
+
+The work in this iteration includes the implementation of new features and the modification of present features with regards to the feedback obtained during the previous customer product demo. Most of our efforts in this iteration were aimed towards finishing the remaining deliverables; the accomplished user stories for this iteration where the completion of the unauthenticated user module, room service module, invoicing module, and housekeeping module.
+\section{Retrospective}
+Most of the concerns we had in regards to the retrospective were addressed. The major concerns for the development team regarded the Ruby on Rails framework as the choice of development platform. While the availability of Ruby GEMs (pre-built functionality) made the implementation of certain modules easier, the learning curve of the Ruby language and the specifics of the GEMs chosen negatively impacted the velocity of the team.
+\section{Required Changes}
+The room availability module, where unauthenticated users could view available rooms and prices without registering and creating a user account, was dropped due to complexity of such a module and time constraints. In place of the room availability module is a simple login or sign-up page where registered users can login and unauthenticated users can register with the system and then login as per conversations with the customer.
+
+Earlier in the planning of this iteration, we decided to have the Trouble Ticket module as a buffer story in case we had spare time to work on it? however, it has been eliminated due to its complexit and the time restrictions.
+\section{Design Evaluation}
+
+\subsection{Design: Coupling, Cohesion}
+
+The Hotel Management system is built on a Model-View-Controller framework which separates control of the system into three distinct areas; separating the representation of information from a user's interaction with it. Ruby on Rails strict coding conventions with regards to the MVC framework forced upon us the discipline needed to make a loosely coupled system. The Hotel Manager applications developed under these confines is more fluent, contains cleaner code and more flexible with regards to extensibility. The modules don?t rely on or expose much of their inner workings to the other modules of the system. Each of the models, by design of the framework, provide a single function with all of their methods closely related.
+
+\subsection{Testing}
+The decision to use ActiveAdmin, and other GEMs, to build the hotel manager made us more efficient because this gem took care of some of the most daunting tasks such as building the UI. In addition, we didn?t have to write tests for many of the features that we implemented because this gem has already been tested by their developers and other people in the Rails community.
+
+Ruby on Rails is the preeminent prototyping tool at it allowed us to deliver consistent productivity gains. The scaffolding feature allows rapid development of simple modules, with very few lines of code, for usability testing and to elicit customer feedback.
+
+\subsection{Extensibility}
+
+Rails lends itself to being an extensible system that allows for a lot of flexibility. MVC decouples the model form its corresponding views and controllers allowing the addition of multiple views for the same model and to reuse views by interchanging controllers. Additionally multiple GEMs are available to add additional functionality to the system.
+
+\subsection{Tools}
+When new projects are created, three databases are made, a test database, development database and production database, this will allow for tests to be done without effecting the data in the production database. When a new model is generated in rails, templates for unit and functional tests will automatically be generated in their corresponding folders. The test coverage is created by filling in the framework with tests for the Model and Controller functionality created. This database is specifically used for unit,functional and integration testing.
+
+Git was used as the version control system for developer collaboration, allowing developers to check-in code modifications when they?re stable enough for other developers to use and test. Github was used as the code sharing and publishing service to manage and store revisions of the project. Jenkins was used for the continuous integration system. 
+\section{Storyboard}
+\section{Velocity}
+Velocity was used to provide a lightweight methodology for measuring the pace at which the team is working, or the project is being completed. By tracking velocity, the development team can measure the speed at which a team progresses and more accurately estimate the time required to complete the project and determine the team?s performance over time. The rate of velocity is calculated by estimating the units of work needed to complete all defined tasks in a given iteration by difficulty level. Each task in a project is evaluated in terms of the unit of work. The Iterations are typically three weeks in length and produce tangible deliverables.
+
+Difficulty estimates were computed using the following scale: 1 easy, 3 medium, 5 difficult.
+
+A burn-down chart shows the work remaining, in estimated units, for each iteration. This chart allows the development team to monitor the status of an iteration and estimate the remaining work for that iteration. Figure 1 is an example of a burn-down chart that shows the desired velocity for the iteration (red) and the actual velocity (blue). The desired velocity includes the estimates of the tasks that were not completed.
+\end{document}
