@@ -1,8 +1,6 @@
 class CreateRoomServices < ActiveRecord::Migration
   def change
     create_table :room_services do |t|
-      t.integer :service_id
-      t.integer :customer_id
       t.integer :reservation_id
       t.string :hotel_id
       t.integer :room_id
