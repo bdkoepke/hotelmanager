@@ -4,7 +4,7 @@ class Reservation < ActiveRecord::Base
   belongs_to :customer
   belongs_to :hotel
   has_one :invoice, :dependent => :delete
-  has_many :room_service
+  has_many :room_services
   after_create :build_invoice
 
 # define scopes for activeadmin
