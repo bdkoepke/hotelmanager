@@ -41,4 +41,8 @@ end
 
 		return overlap
 	end
+
+	def name
+		return room_id.to_s + " from " + date_in.to_s + " to " + date_out.to_s
+	end
 end
