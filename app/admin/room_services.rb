@@ -58,7 +58,7 @@ ActiveAdmin.register RoomService do
     end
     column :hotel
    column :room
-    column :reservation_id
+    column :reservation
    column :order
     column :price
     column :serviced
