@@ -73,7 +73,6 @@ ActiveAdmin.register RoomService do
       f.input :order
       f.input :price
       f.input :serviced
-   #   f.input :service_date, :value =>  Date.today
       f.buttons
     end
   end
