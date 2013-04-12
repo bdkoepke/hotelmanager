@@ -29,4 +29,6 @@ class AdminUser < ActiveRecord::Base
 			Customer.where(:admin_user_id => self.id).reorder('id DESC')
 		end
   end
+
+
 end

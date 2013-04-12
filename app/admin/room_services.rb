@@ -10,7 +10,7 @@ ActiveAdmin.register RoomService do
 #      reservations = Reservation.where(:hotel_id => hotelid)
   #    reservations = Reservation.where("hotel_id == ? AND date_in >= ? AND date_out <= ?", params[:hotel_id], dtoday, dtoday).pluck(:room_id)
  #     if (reservations.size > 0)
-        rooms = Room.where(:hotel_id => hotelid).pluck(:name)
+        rooms = Room.where(:hotel_id => hotelid)
  #       i = 0
  #       siz = rooms.size
  #       while (i < siz)
@@ -44,7 +44,7 @@ ActiveAdmin.register RoomService do
       # get the current reservation for the particular room
       roomid = params[:room_id]
       dtoday = Date.today
-      reservations = Reservation.where("room_id == ? AND date_in <= ? AND date_out >= ?", params[:room_id], dtoday, dtoday).pluck(:id)
+      reservations = Reservation.where("room_id == ? AND date_in <= ? AND date_out >= ?", params[:room_id], dtoday, dtoday)
       @available_reservations = reservations
       respond_to do |format|
           format.json { render :json => reservations }
@@ -58,7 +58,7 @@ ActiveAdmin.register RoomService do
     end
     column :hotel
    column :room
-    column :reservation_id
+    column :reservation
    column :order
     column :price
     column :serviced
@@ -73,7 +73,6 @@ ActiveAdmin.register RoomService do
       f.input :order
       f.input :price
       f.input :serviced
-   #   f.input :service_date, :value =>  Date.today
       f.buttons
     end
   end

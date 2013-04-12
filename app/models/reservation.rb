@@ -4,7 +4,7 @@ class Reservation < ActiveRecord::Base
   belongs_to :customer
   belongs_to :hotel
   has_one :invoice, :dependent => :delete
-  has_many :room_service
+  has_many :room_services
   after_create :build_invoice
 
 # define scopes for activeadmin
@@ -40,5 +40,9 @@ end
 		end
 
 		return overlap
+	end
+
+	def name
+		return room_id.to_s + " from " + date_in.to_s + " to " + date_out.to_s
 	end
 end

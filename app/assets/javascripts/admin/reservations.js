@@ -45,11 +45,11 @@ $(document).ready(function() {
        type: "GET",
        data: { 'room_type' : this.value, 'hotel_id' : $('#reservation_hotel_id').val() } ,
        success:function(data){
-          $('#reservation_room_id').find('option').remove();          
+          $('#reservation_room_id').find('option').remove();         
+		 console.log(data); 
           for (var i = 0 ; i < data.length ; i++)
           {
-            $('#reservation_room_id').append("<option value='" + ( i + 1) + "'>" + data[i] + "</option>");
-
+            $('#reservation_room_id').append("<option value='" + (data[i].id) + "'>" + data[i].name + "</option>");
           }
        },
       dataType:'JSON'
@@ -71,8 +71,7 @@ $(document).ready(function() {
        	$('#reservation_room_id').append('<option value=' + ""+ '></option>');
         for (var i = 0 ; i < data.length ; i++)
        	{
-       		$('#reservation_room_id').append("<option selected='selected' value='" + (i + 1) + "'>" + data[i] + "</option>");
-          $("#elementid").append("<option value='1'>Apples</option>")
+            $('#reservation_room_id').append("<option value='" + (data[i].id) + "'>" + data[i].name + "</option>");
         }
        },
       dataType:'JSON',

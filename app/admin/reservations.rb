@@ -36,9 +36,9 @@ ActiveAdmin.register Reservation do
       roomtype = params[:room_type]
 
       if(roomtype == nil && hotelid != nil)
-        rooms = Room.where(:hotel_id => hotelid).pluck(:name)
+        rooms = Room.where(:hotel_id => hotelid)
       else 
-        rooms = Room.where(:hotel_id => hotelid, :room_type => roomtype).pluck(:name)
+        rooms = Room.where(:hotel_id => hotelid, :room_type => roomtype)
       end 
       @available_rooms = rooms
       respond_to do |format|
@@ -91,17 +91,40 @@ ActiveAdmin.register Reservation do
       #f.input :room,  :label => "Available Rooms" , :collection => @available_rooms
       if (current_admin_user.role == "admin" || current_admin_user.role == "sales associate")
         f.input :customer
+        f.input :rate_additional
+
       elsif (current_admin_user.role == "customer")
 		f.input :customer_id, :as => :hidden, :value => current_admin_user.customer.id
 	  end
 
       f.input :date_in, :as => :ui_date_picker
       f.input :date_out , :as => :ui_date_picker, :options => { minDate: Date.today}
-      f.input :rate_additional
       f.input :no_adults , :as => :select, :collection => [1,2,3,4]
       f.input :no_children, :as => :select, :collection => [0,1,2,3]
       f.input :comment
       f.buttons
     end
   end
+
+  show :title => :name do |res|
+    attributes_table do
+      row :id
+      row :hotel
+      row :room
+      row :room_type
+	  row :customer
+        row("Price per night") { res.room.price }
+	    row("Booking Price (No additional charges)") { ( res.room.price) * (res.date_out.mjd - res.date_in.mjd)}
+      if (current_admin_user.role != "customer" )
+	    row :rate_additional
+	  end
+      row :date_in
+      row :date_out
+      row :no_adults
+      row :no_children
+	  row :status
+	  row :comment
+    end
+  end
+
 end

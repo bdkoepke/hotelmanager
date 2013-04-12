@@ -13,8 +13,9 @@ $(document).ready(function() {
        	$('#room_service_room_id').append('<option value=' + ""+ '></option>');
         for (var i = 0 ; i < data.length ; i++)
        	{
-       		$('#room_service_room_id').append("<option selected='selected' value='" + (i + 1) + "'>" + data[i] + "</option>");
-          $("#elementid").append("<option value='1'>Apples</option>")
+			console.log(data[i]);
+
+       		$('#room_service_room_id').append("<option selected='selected' value='" + (data[i].id) + "'>" + data[i].name + "</option>");
         }
        },
       dataType:'JSON',
@@ -37,8 +38,9 @@ $(document).ready(function() {
        	$('#room_service_reservation_id').append('<option value=' + ""+ '></option>');
         for (var i = 0 ; i < data.length ; i++)
        	{
-       		$('#room_service_reservation_id').append("<option selected='selected' value='" + (i + 1) + "'>" + data[i] + "</option>");
-          $("#elementid").append("<option value='1'>Apples</option>")
+			console.log(data[i]);
+
+       		$('#room_service_reservation_id').append("<option selected='selected' value='" + data[i].id + "'>" + (data[i].id + " from " + data[i].date_in + " to " + data[i].date_out) + "</option>");
         }
        },
       dataType:'JSON',

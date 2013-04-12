@@ -14,7 +14,7 @@ controller do
 	end
  end
 
-  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate" }
+  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate"}
 
   config.batch_actions = false
   actions :index, :show, :destroy
@@ -35,8 +35,8 @@ index do
       invoice.reservation.room.name
     end
     column "Total" do |invoice|
-##
-		@services = RoomService.where(:hotel_id => invoice.reservation.hotel.id, :room_id => 			invoice.reservation.room.id)
+
+		@services = invoice.reservation.room_services
 		servicesTotal = 0
 		for service in @services
 			servicesTotal += service.price
@@ -46,10 +46,12 @@ index do
 		else
 			additional = invoice.reservation.rate_additional
 		end
-		invoice.reservation.room.price + additional + servicesTotal	
+        startDate = invoice.reservation.date_in
+  		endDate = invoice.reservation.date_out
+        days = endDate.mjd - startDate.mjd
 
-##
-#  invoice.reservation.room.price + invoice.reservation.rate_additional
+		((invoice.reservation.room.price + additional) * days)  + servicesTotal	
+
     end
     
     default_actions
@@ -61,33 +63,38 @@ end
   
 
   panel @title do
-	#@service = 
-	@services = RoomService.where(:hotel_id => invoice.reservation.hotel.id, :room_id => invoice.reservation.room.id)
+	@services = invoice.reservation.room_services
+
   attributes_table_for invoice do
 
 	@service_prices = 0;
  	for service in @services
 	@service_prices += service.price
-row service.order do
+  row service.order do
 			service.price
 		end
 end
 	
-    row "Room Price" do
+    row "Room Price per Night" do
           invoice.reservation.room.price
     end
-	row "Additional Price" do
+	row "Additional Price per Night" do
 
 		if (invoice.reservation.rate_additional == nil)
 			@additional = 0
 		else
-          	@additional =invoice.reservation.rate_additional
+          	@additional = invoice.reservation.rate_additional
 		end
-    	end
-	  row  "Total" do
-	#:computeTotal          
+     end
+	 row  "Total" do
 		
-@total = invoice.reservation.room.price + @additional + @service_prices
+        startDate = invoice.reservation.date_in
+  		endDate = invoice.reservation.date_out
+        days = endDate.mjd - startDate.mjd
+		
+		@total = ((invoice.reservation.room.price + @additional) * days)  + @service_prices
+
+
     end
     row "Balance" do
     if(@status != "Checked-out")

@@ -1,2 +1,0 @@
-\newlabel{serverRequirements}
-\newlabel{supportedBrowsers}
