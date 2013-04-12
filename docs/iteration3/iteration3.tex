@@ -8,7 +8,7 @@
 \usepackage{pgfplots}
 
 % necessary for \url and \href
-\usepackage{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
 % pdf import
 \usepackage{pdfpages}
@@ -24,6 +24,7 @@
 \definecolor{dark-red}{rgb}{0.4,0.15,0.15}
 \definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
 \definecolor{medium-blue}{rgb}{0,0,0.5}
+
 \hypersetup{
   colorlinks, linkcolor={dark-red},
   citecolor={dark-blue}, urlcolor={medium-blue}
@@ -46,23 +47,18 @@
 \end{frontmatter}
 \tableofcontents
 \listoffigures
+\listoftables
 \clearpage
 
 \section{Work Progress}
 
 In this iteration we implemented new features and modified present features based on the feedback obtained during the previous product demo. This iteration was focused on finishing the remaining deliverables. The accomplished user stories for this iteration include the completion of the guest user module, room service, invoicing, and housekeeping. In addition, errors with the reservation system validation were fixed and the system now uses SSL for all interaction.
 
-Due to time constraints, we were unable to complete the elements from Iteration 4 (which was expected).
-
-The production version can be found at: \url{http://brandonkoepke.dyndns.org:3000/admin/login}.
-
-The Git repository can be found at: \href{https://github.com/bdkoepke/hotelmanager.git}{https://github.com/bdkoepke/hotelmanager.git}.
+Due to time constraints, we were unable to complete the elements from Iteration 4 (which was expected). The production version can be found at: \url{https://brandonkoepke.dyndns.org:3000/admin/login}. The Git repository can be found at: \url{https://github.com/bdkoepke/hotelmanager.git}
 
 \section{Retrospective}
 
-Most of the concerns brought up in the previous retrospective were addressed. The major concern for the development team was the selection of Ruby on Rails framework for the development platform. While the availability of Ruby Gems (pre-built functionality) made the implementation of certain modules easier, the learning curve of the Ruby language and the specifics of the Gems chosen negatively impacted the velocity of the team. Unfortunately there was nothing we could do about this since moving to a new system would have likely taken even more time than dealing with the current system.
-
-Figure \ref{retrospective} contains the retrospectives for this iteration. Overall the group had few grievences, and most of the points were positive. The retrospectives were split up into positive, negative, and neutral. The main unresolved issue was the difficulty in using ruby, which is unfortunately outside of our control.
+Figure \ref{retrospective} contains the retrospectives for this iteration. Overall the group had few grievances, and most of the points were positive. The retrospectives were split up into positive, negative, and neutral. Most of the concerns brought up in the previous retrospective were addressed. The major concern for the development team was the selection of Ruby on Rails framework for the development platform. While the availability of Ruby Gems (pre-built functionality) made the implementation of certain modules easier, the learning curve of the Ruby language and the specifics of the Gems chosen negatively impacted the velocity of the team. Unfortunately there was nothing we could do about this since moving to a new system would have likely taken even more time than dealing with the current system.
 
 \begin{figure}[!ht]
 	\centering
@@ -71,14 +67,11 @@ Figure \ref{retrospective} contains the retrospectives for this iteration. Overa
 	\caption{Retrospectives}
 \end{figure}
 
-
 \section{Required Changes}
 
 The room availability module (which would have enabled guests to view available rooms without registering) was dropped due to complexity and time constraints. A simple sign-up page was created in lieu of the room availability module. This sign-up page enables users to register and reserve rooms. 
 
-The Trouble Ticket system was being used as a buffer story in the off-chance that we would have enough time to work on it. Due to time-constraints, it was eliminated although it would be possible to implement it in another iteration.
-
-The remaining modules that we had pushed off until iteration 4 would not require changes of the main system to implement. The remaining modules include housekeeping and reporting. The housekeeping module would just require adding another user type and restricting the views (which can be done in a very module way since this type of change was already required). The reporting system should also not have any impact on the rest of the system except for adding an additional tab to the navigation bar.
+The remaining modules that we had pushed off until iteration 4 would not require changes of the main system to implement. The remaining modules include housekeeping, reporting, and trouble tickets. The housekeeping module would just require adding another user type and restricting the views (which can be done in a very module way since this type of change was already required). The reporting system and trouble ticket system should also not have any impact on the rest of the system except for adding additional tabs to the navigation bar. 
 
 The only change that was requested by our customer was to simplify the invoicing system. The originally proposed invoicing system would have generated a pdf for print-off and would have listed delinquent customer accounts. Instead of this, a simple invoicing page was created which enabled invoice viewing.
 
@@ -86,7 +79,7 @@ The only change that was requested by our customer was to simplify the invoicing
 
 \subsection{Design: Coupling, Cohesion, Extensibility}
 
-The hotel management system is built using the Model View Controller (MVC) pattern. This pattern is natively supported by Rails and provides a clean separation between the view and the business logic. The controller layer in the system depends on both the view and the model, the view depends on the model, and model do not depend on any of the other layers. This resulted in very clean code and a shallow dependency hierarchy. The modules within each layer do not rely on or expose their inner workings to the other modules of the system. Each of the models by convention, provide only a single function and contain closely related methods. All of these combined resulted in a system with low coupling and high cohesion.
+The hotel management system is built using the Model View Controller (MVC) pattern. This pattern is natively supported by Rails and provides a clean separation between the view and the business logic. The controller layer in the system depends on both the view and the model, the view depends on the model, and the model does not depend on any of the other layers. This resulted in very clean code and a shallow dependency hierarchy. The modules within each layer do not rely on or expose their inner workings to the other modules of the system. Each of the models by convention, provide only a single function and contain closely related methods. All of these combined resulted in a system with low coupling and high cohesion.
 
 \subsection{Testing}
 
@@ -96,7 +89,7 @@ Ruby on Rails is the preeminent prototyping tool as it allowed us to deliver con
 
 \subsection{Tools}
 
-When new projects are created, three databases are made: a test database, a development database and a production database. This allows for tests to be done without effecting the data in the production database. When a new model is generated in rails, templates for unit and functional tests will be generated automatically in their corresponding folders. 
+When new projects are created, three databases are made: a test database, a development database and a production database. This allows for tests to be done without affecting the data in the production database. When a new model is generated in rails, templates for unit and functional tests will be generated automatically in their corresponding folders. 
 
 Git was used as the version control system, which allows developers to check-in code modifications when they're stable enough for other developers to use and test. GitHub was used as the code sharing and publishing service to manage and store revisions of the project. Jenkins was setup for continuous integration, although it was not used since ruby code is dynamically executed and the unit tests all run in short enough time that it would have been more effort than it would have been worth.
 \section{Storyboard}
