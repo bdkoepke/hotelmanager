@@ -14,7 +14,7 @@ controller do
 	end
  end
 
-  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate" }
+  menu :if => proc{ current_admin_user.role == "admin" || current_admin_user.role == "sales associate"}
 
   config.batch_actions = false
   actions :index, :show, :destroy
