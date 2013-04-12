@@ -2,6 +2,8 @@
 % fancy code formatting
 \usepackage{listings}
 
+\usepackage{graphicx}
+
 % plots
 \usepackage{pgfplots}
 
@@ -28,7 +30,7 @@
 }
 
 % tex's margins tend to be too large
-\usepackage[left=1.25in,right=1.25in,bottom=1.25in,top=1.25in]{geometry}
+\usepackage[left=1in,right=1in,bottom=1in,top=1in]{geometry}
 
 % course is seng 403
 \journal{SENG 403, Winter 2013}
@@ -60,13 +62,25 @@ The Git repository can be found at: \href{https://github.com/bdkoepke/hotelmanag
 
 Most of the concerns brought up in the previous retrospective were addressed. The major concern for the development team was the selection of Ruby on Rails framework for the development platform. While the availability of Ruby Gems (pre-built functionality) made the implementation of certain modules easier, the learning curve of the Ruby language and the specifics of the Gems chosen negatively impacted the velocity of the team. Unfortunately there was nothing we could do about this since moving to a new system would have likely taken even more time than dealing with the current system.
 
+Figure \ref{retrospective} contains the retrospectives for this iteration. Overall the group had few grievences, and most of the points were positive. The retrospectives were split up into positive, negative, and neutral. The main unresolved issue was the difficulty in using ruby, which is unfortunately outside of our control.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.15]{images/retrospective}
+	\label{retrospective}
+	\caption{Retrospectives}
+\end{figure}
+
+
 \section{Required Changes}
 
-The room availability module (which would have enabled guests to view available rooms without registering) was dropped due to complexity and time constraints. In lieu of the room availability module, a simple sign-up page was created. This sign-up page would enable users to register and reserve rooms. 
+The room availability module (which would have enabled guests to view available rooms without registering) was dropped due to complexity and time constraints. A simple sign-up page was created in lieu of the room availability module. This sign-up page enables users to register and reserve rooms. 
 
-The Trouble Ticket system was being used as a buffer story in the off-chance that we would have enough time to work on it. Due to time-constraints, it was eliminated although it would be possible to implement it if there was another iteration.
+The Trouble Ticket system was being used as a buffer story in the off-chance that we would have enough time to work on it. Due to time-constraints, it was eliminated although it would be possible to implement it in another iteration.
 
 The remaining modules that we had pushed off until iteration 4 would not require changes of the main system to implement. The remaining modules include housekeeping and reporting. The housekeeping module would just require adding another user type and restricting the views (which can be done in a very module way since this type of change was already required). The reporting system should also not have any impact on the rest of the system except for adding an additional tab to the navigation bar.
+
+The only change that was requested by our customer was to simplify the invoicing system. The originally proposed invoicing system would have generated a pdf for print-off and would have listed delinquent customer accounts. Instead of this, a simple invoicing page was created which enabled invoice viewing.
 
 \section{Design Evaluation}
 
@@ -87,8 +101,27 @@ When new projects are created, three databases are made: a test database, a deve
 Git was used as the version control system, which allows developers to check-in code modifications when they're stable enough for other developers to use and test. GitHub was used as the code sharing and publishing service to manage and store revisions of the project. Jenkins was setup for continuous integration, although it was not used since ruby code is dynamically executed and the unit tests all run in short enough time that it would have been more effort than it would have been worth.
 \section{Storyboard}
 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.18]{images/storyboard_mar24}
+	\caption{Storyboard: March 24}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.18]{images/storyboard_apr4}
+	\caption{Storyboard: April 4}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.18]{images/storyboard_apr11}
+	\caption{Storyboard: April 11}
+\end{figure}
+
 \section{Outcomes and Deliverables}
 
+\clearpage
 \includepdf[pages={1-}]{include/outcomes_deliverables}
 
 \section{Velocity}
@@ -132,19 +165,20 @@ A burn-down chart shows the work remaining, in estimated units, for each iterati
     \hline
     \textbf{Team Member} & \textbf{Contributions} \\
     \hline
-    Alberto Saavedra & \\
+    Alberto Saavedra & Developed the customer self-service module. Added bootstrap to sign in and sign up forms. \\
     \hline
-    Brandon Koepke & \\
+    Brandon Koepke & Worked with Justin on the report, forced the system to use SSL by default (including certificate generation/etc), fixed the reservation date range validation, fixed the reservation naming, setup the demo server. \\
     \hline
-    Garrick Van Der Lee & \\
+    Garrick Van Der Lee & Developed the Room Service module and fixed a few minor bugs with older code. Helped out a bit with invoice. \\
     \hline
-    Julia Paredes & \\
+    Julia Paredes & Developed the invoice module. Added check-in check-out functionality. Helped out with some bugs. \\
     \hline
-    Justin Milanovic & \\
+    Justin Milanovic & Worked with Brandon to complete the outcomes and deliverables report. Also worked with Alberto to complete the guest user system. \\
     \hline
-    Tyler Gibb & \\
+    Tyler Gibb & Worked on the Room Service model, adjusted the price validator, and helped out with various debugging and syntax errors. \\
     \hline
   \end{tabular}
+	\caption{Individual Progress}
 \end{table}
 
 \end{document}
